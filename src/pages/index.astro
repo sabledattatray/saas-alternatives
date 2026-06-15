@@ -61,12 +61,18 @@ const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives
                     </div>
                 </div>
 
-                <!-- Category Carousel with Fade Masks -->
-                <div class="relative w-full max-w-full">
-                    <!-- Left Fade -->
-                    <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950/90 to-transparent z-10 pointer-events-none"></div>
+                <!-- Category Carousel with Scroll Buttons -->
+                <div class="relative w-full max-w-full group/carousel">
+                    <!-- Left Fade & Button -->
+                    <div id="scrollLeftWrapper" class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-10 flex items-center justify-start pointer-events-none transition-opacity duration-300 opacity-0">
+                        <button id="scrollLeftBtn" class="pointer-events-auto w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-colors shadow-lg ml-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
                     
-                    <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-3 py-2 px-6" id="categoryCarousel">
+                    <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-3 py-2 px-6 scroll-smooth" id="categoryCarousel">
                         {categories.map((category) => (
                             <button 
                                 class="category-pill snap-start shrink-0 whitespace-nowrap px-6 py-3 rounded-full border border-white/10 bg-slate-900/50 text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-300"
@@ -77,8 +83,14 @@ const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives
                         ))}
                     </div>
                     
-                    <!-- Right Fade -->
-                    <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950/90 to-transparent z-10 pointer-events-none"></div>
+                    <!-- Right Fade & Button -->
+                    <div id="scrollRightWrapper" class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-950 via-slate-950/80 to-transparent z-10 flex items-center justify-end pointer-events-none transition-opacity duration-300">
+                        <button id="scrollRightBtn" class="pointer-events-auto w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-colors shadow-lg mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -224,5 +236,45 @@ const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives
         if (emptyState) {
             emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
         }
+    }
+
+    // Carousel Scroll Logic
+    const categoryCarousel = document.getElementById('categoryCarousel');
+    const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+    const scrollRightBtn = document.getElementById('scrollRightBtn');
+    const scrollLeftWrapper = document.getElementById('scrollLeftWrapper');
+    const scrollRightWrapper = document.getElementById('scrollRightWrapper');
+
+    if (categoryCarousel && scrollLeftBtn && scrollRightBtn) {
+        const scrollAmount = 300;
+
+        scrollLeftBtn.addEventListener('click', () => {
+            categoryCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        scrollRightBtn.addEventListener('click', () => {
+            categoryCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        const updateScrollButtons = () => {
+            const { scrollLeft, scrollWidth, clientWidth } = categoryCarousel;
+            
+            if (scrollLeft > 5) {
+                scrollLeftWrapper?.classList.remove('opacity-0');
+            } else {
+                scrollLeftWrapper?.classList.add('opacity-0');
+            }
+
+            if (Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 5) {
+                scrollRightWrapper?.classList.add('opacity-0');
+            } else {
+                scrollRightWrapper?.classList.remove('opacity-0');
+            }
+        };
+
+        categoryCarousel.addEventListener('scroll', updateScrollButtons, { passive: true });
+        // Initial check
+        setTimeout(updateScrollButtons, 100);
+        window.addEventListener('resize', updateScrollButtons);
     }
 </script>
