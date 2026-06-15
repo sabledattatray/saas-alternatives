@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import saasData from '../../data/saas.json';
+
+export async function getStaticPaths() {
+  // Extract all unique categories
+  const allCategories = [...new Set(saasData.map((item) => item.category))];
+
+  return allCategories.map((category) => {
+    // Generate a URL-friendly slug
+    const slug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    
+    // Get all items in this category
+    const items = saasData.filter((item) => item.category === category);
+    
+    return {
+      params: { category: slug },
+      props: { name: category, items },
+    };
+  });
+}
+
+const { name, items } = Astro.props;
+const totalReplacements = items.reduce((acc, curr) => acc + curr.alternatives.length, 0);
+---
+
+<Layout title={`${name} Open Source Alternatives`} description={`Find the best open-source and free alternatives for ${name} software.`}>
+    <main class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div class="mb-8">
+            <a href="/" class="group inline-flex items-center text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to all categories
+            </a>
+        </div>
+
+        <div class="mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                Open Source <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{name}</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl">
+                We found {items.length} expensive {name} tools and mapped them to {totalReplacements} privacy-friendly, open-source alternatives.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+            {items.map((item) => (
+                <a href={`/alternative-to/${item.slug}`} class="saas-card block group relative rounded-3xl p-[1px] overflow-hidden transition-all duration-500 shadow-2xl shadow-black/40 hover:-translate-y-1 hover:shadow-indigo-500/20">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent group-hover:from-indigo-500 group-hover:to-purple-500 transition-colors duration-500"></div>
+                    
+                    <div class="relative bg-slate-900/95 backdrop-blur-xl rounded-[23px] p-8 h-full flex flex-col justify-between border border-white/5 group-hover:border-transparent transition-colors z-10 overflow-hidden">
+                        
+                        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:via-indigo-400 transition-colors"></div>
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/30 transition-colors"></div>
+
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-semibold tracking-wider uppercase mb-5 border border-white/10 group-hover:bg-indigo-500/10 group-hover:text-indigo-300 group-hover:border-indigo-500/20 transition-all">
+                                {item.category}
+                            </span>
+                            
+                            <h2 class="text-3xl font-extrabold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-300 group-hover:to-purple-300 transition-all">
+                                {item.name}
+                            </h2>
+                            <p class="text-slate-400 mt-2 text-sm font-medium uppercase tracking-widest opacity-60">Replaced By</p>
+                        </div>
+                        
+                        <div class="mt-12 flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-3">
+                                    {item.alternatives.map((alt, index) => (
+                                        <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white shadow-lg relative z-[{10 - index}]">
+                                            {alt.name.charAt(0)}
+                                        </div>
+                                    ))}
+                                </div>
+                                <span class="ml-4 text-sm font-medium text-slate-300 group-hover:text-white transition-colors">
+                                    {item.alternatives.length} {item.alternatives.length === 1 ? 'Tool' : 'Tools'}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </main>
+</Layout>

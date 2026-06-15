@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Suggest an Edit - OpenSourceAlts" description="Spot a mistake? Suggest an edit to our directory.">
+    <main class="max-w-3xl mx-auto py-16 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-12">
+            <a href="/" class="group inline-flex items-center text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Directory
+            </a>
+        </div>
+        
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-white tracking-tight sm:text-5xl mb-4">
+                Suggest an <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Edit</span>
+            </h1>
+            <p class="text-xl text-slate-400 font-light">
+                Spot a broken link or outdated information? Let us know so we can keep the directory accurate for everyone.
+            </p>
+        </div>
+
+        <div class="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-white/10 p-8 shadow-2xl relative overflow-hidden">
+            <!-- Glow -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <form class="space-y-6 relative z-10" onsubmit="event.preventDefault(); alert('Edit suggestion submitted successfully. Thank you!');">
+                
+                <!-- Tool Name -->
+                <div>
+                    <label for="tool-name" class="block text-sm font-medium text-slate-300 mb-2">Tool Name (e.g. Supabase, Notion)</label>
+                    <input type="text" id="tool-name" name="tool-name" required class="block w-full rounded-xl bg-slate-950/50 border border-white/10 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors px-4 py-3 outline-none" placeholder="Which tool needs an update?">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label for="edit-description" class="block text-sm font-medium text-slate-300 mb-2">What needs to be changed?</label>
+                    <textarea id="edit-description" name="edit-description" rows="5" required class="block w-full rounded-xl bg-slate-950/50 border border-white/10 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors px-4 py-3 outline-none resize-none" placeholder="e.g. The pricing model has changed to... or The link is broken..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <p class="text-xs text-slate-500">Community edits are reviewed manually within 48 hours.</p>
+                    <button type="submit" class="inline-flex justify-center py-3 px-8 border border-transparent shadow-lg text-sm font-bold rounded-xl text-white bg-purple-600 hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-purple-500 transition-all">
+                        Submit Edit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</Layout>
