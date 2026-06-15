@@ -1113,5 +1113,329 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "stripe",
+    "name": "Stripe",
+    "category": "Payments & Billing",
+    "whySwitch": "Stripe is easy to start with, but transaction margins and monthly recurring billing calculation fees eat into your revenue. Open-source subscription management and billing systems sit on top of any payment gateway and give you full control over your billing code and logic.",
+    "alternatives": [
+      {
+        "name": "Lago",
+        "description": "Open-source metering and usage-based billing library. The Stripe Billing and Chargebee alternative.",
+        "url": "https://www.getlago.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Usage-based billing",
+          "Subscription management",
+          "Invoicing & tax calculation",
+          "Segment/Stripe integrations"
+        ],
+        "pros": [
+          "Excellent for usage-based/developer APIs",
+          "Completely free to self-host with no transaction cut",
+          "Modern API and developer experience"
+        ],
+        "cons": [
+          "Still requires a merchant gateway (like Stripe or Adyen) for payments",
+          "Fewer out-of-the-box global tax automation features"
+        ]
+      },
+      {
+        "name": "Kill Bill",
+        "description": "Open-source subscription billing and payment platform. Highly modular and enterprise-ready.",
+        "url": "https://killbill.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Multi-tenant billing engine",
+          "Complex subscription flows",
+          "Payment router",
+          "Analytics dashboards"
+        ],
+        "pros": [
+          "Extremely robust and battle-tested for enterprise workloads",
+          "Supports hundreds of payment plugins",
+          "Fully customizable catalog system"
+        ],
+        "cons": [
+          "Large Java codebase with a steep learning curve",
+          "Dashboard UI feels dated compared to Lago"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "hubspot",
+    "name": "HubSpot",
+    "category": "Sales & CRM",
+    "whySwitch": "HubSpot's pricing increases rapidly as your marketing list grows. Self-hosting your marketing automation allows you to trigger infinite campaigns, manage millions of contacts, and track user behavior without paying a contact tax.",
+    "alternatives": [
+      {
+        "name": "Mautic",
+        "description": "The world's largest open-source marketing automation project. Own your marketing data.",
+        "url": "https://www.mautic.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Campaign builder",
+          "Contact scoring",
+          "Email & SMS automation",
+          "Social media tracking"
+        ],
+        "pros": [
+          "Campaigns builder is very robust",
+          "No limit on contacts",
+          "Self-hostable for free"
+        ],
+        "cons": [
+          "Setup is complicated",
+          "Needs SMTP provider"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "google-docs",
+    "name": "Google Docs",
+    "category": "Workspace & Notes",
+    "whySwitch": "Google Docs processes your text documents for data profile training and offers limited customization. Switching to collaborative open-source document editors guarantees privacy, rich markdown support, and absolute control over your sensitive files.",
+    "alternatives": [
+      {
+        "name": "CryptPad",
+        "description": "Private-by-design, end-to-end encrypted real-time collaborative editor.",
+        "url": "https://cryptpad.fr",
+        "pricing": "Free / Open Source",
+        "features": [
+          "End-to-end encryption",
+          "Rich text, code, sheets, and presentations",
+          "No account required for quick sharing",
+          "Zero-knowledge server storage"
+        ],
+        "pros": [
+          "Absolute privacy (even server admins cannot read your files)",
+          "Very clean interfaces",
+          "Fully functional spreadsheets and presentations"
+        ],
+        "cons": [
+          "No password recovery (if you lose your keys, files are lost forever)",
+          "Cannot handle extremely large files as easily"
+        ]
+      },
+      {
+        "name": "Etherpad",
+        "description": "A highly customizable open-source online editor providing collaborative editing in real-time.",
+        "url": "https://etherpad.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Real-time co-authoring",
+          "Rich plugin ecosystem (thousands of extensions)",
+          "Version history",
+          "Multiple export formats"
+        ],
+        "pros": [
+          "Extremely lightweight and fast",
+          "Super easy to embed in custom web portals",
+          "Translates to dozens of languages"
+        ],
+        "cons": [
+          "Lacks built-in advanced styling (resembles a rich Notepad)",
+          "No native spreadsheet or presentation support"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "photoshop",
+    "name": "Photoshop",
+    "category": "Design & Creative",
+    "whySwitch": "Adobe Creative Cloud's subscription model is a heavy monthly cost for creators. Open-source design tools offer professional image editing, layers, vector masks, and photo manipulation tools without any recurring fees.",
+    "alternatives": [
+      {
+        "name": "GIMP",
+        "description": "GNU Image Manipulation Program. The professional cross-platform image editor.",
+        "url": "https://www.gimp.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Layer and channel support",
+          "Customizable interface",
+          "Extensive file format compatibility (including PSD)",
+          "Photo enhancement & digital retouching"
+        ],
+        "pros": [
+          "Very mature (25+ years of active development)",
+          "Hundreds of community plugins and filters",
+          "Runs smoothly on low-end hardware"
+        ],
+        "cons": [
+          "Interface layout has a steep learning curve",
+          "Lacks non-destructive adjustment layers natively (coming in GIMP 3.0)"
+        ]
+      },
+      {
+        "name": "Krita",
+        "description": "A professional free and open-source painting program designed for concept artists, illustrators, and texture artists.",
+        "url": "https://krita.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Brush stabilizers",
+          "Vector and text support",
+          "Animation tools",
+          "Non-destructive layers"
+        ],
+        "pros": [
+          "Best-in-class brush engine for drawing and painting",
+          "Beautiful, modern, dark UI out-of-the-box",
+          "Supports non-destructive editing and adjustment masks"
+        ],
+        "cons": [
+          "Less focused on photo retouching compared to Photoshop",
+          "Text editor tool can be clunky to use"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "lastpass",
+    "name": "LastPass",
+    "category": "Security",
+    "whySwitch": "LastPass suffered multiple high-profile security breaches, exposing users' vault data. Moving to open-source password managers allows you to host your own vault, encrypt all metadata, and ensure zero-knowledge security.",
+    "alternatives": [
+      {
+        "name": "Vaultwarden",
+        "description": "An alternative Bitwarden server API implementation written in Rust. Lightweight and easy to run on cheap hardware.",
+        "url": "https://github.com/dani-garcia/vaultwarden",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Full Bitwarden client compatibility",
+          "Extremely low resource footprint (runs on 10MB RAM)",
+          "Supports organizations & shared vaults",
+          "Built-in directory sync"
+        ],
+        "pros": [
+          "Requires fraction of resources of the official Bitwarden server",
+          "Enables premium features (like directory sync and attachments) for free",
+          "One-click Docker deploy"
+        ],
+        "cons": [
+          "Unofficial implementation (not supported by Bitwarden Inc.)",
+          "Requires manual updates and backups of database"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "segment",
+    "name": "Segment",
+    "category": "Data & Analytics",
+    "whySwitch": "Segment's pricing scales based on Monthly Tracked Users (MTUs), making it highly expensive for apps with large traffic volume. Open-source Customer Data Platforms (CDPs) let you collect and route event data to your warehouse without limits.",
+    "alternatives": [
+      {
+        "name": "RudderStack",
+        "description": "The warehouse-first Customer Data Platform (CDP). An open-source, developer-friendly alternative to Segment.",
+        "url": "https://rudderstack.com",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Warehouse-first architecture",
+          "Hundreds of destinations",
+          "SDKs for all major languages & frameworks",
+          "Data governance"
+        ],
+        "pros": [
+          "Stores raw data directly in your database (Snowflake, BigQuery)",
+          "Very high processing speed",
+          "GDPR & HIPAA compliant"
+        ],
+        "cons": [
+          "Self-hosting is complex and requires Kubernetes knowledge",
+          "Cloud version has strict limits on free tier"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "webflow",
+    "name": "Webflow",
+    "category": "Design & Creative",
+    "whySwitch": "Webflow locks you into their expensive hosting plans, limits site exports, and has steep pricing for CMS usage. Open-source site builders and content management tools let you export clean code and host your websites anywhere.",
+    "alternatives": [
+      {
+        "name": "GrapesJS",
+        "description": "An open-source, multi-purpose Web Builder Framework which allows building templates and sites without coding.",
+        "url": "https://grapesjs.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Drag & drop editor",
+          "CSS grid and layout styling",
+          "Component library",
+          "Clean code export (HTML, CSS)"
+        ],
+        "pros": [
+          "No vendor lock-in; host it on your own server",
+          "Highly extensible framework for building custom web builders",
+          "Completely free with zero licensing fees"
+        ],
+        "cons": [
+          "Requires developer setup to integrate into a production CMS",
+          "Fewer pre-built templates than Webflow"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "loom",
+    "name": "Loom",
+    "category": "Workspace & Notes",
+    "whySwitch": "Loom's free tier restricts your screen recordings to 5 minutes and limits the number of videos you can save. Open-source extensions and self-hostable video hosting give you unlimited recording time and absolute privacy.",
+    "alternatives": [
+      {
+        "name": "Screenity",
+        "description": "The most powerful screen recorder for Chrome. Annotate, record, and edit your videos for free.",
+        "url": "https://screenity.connorthedev.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "No recording limit",
+          "On-screen drawing and annotations",
+          "Camera and microphone input control",
+          "Trim and edit tools"
+        ],
+        "pros": [
+          "Completely free with no watermarks",
+          "Powerful editor and exporting formats (MP4, WebM, GIF)",
+          "100% private; data never leaves your computer"
+        ],
+        "cons": [
+          "Browser extension only (not a desktop application)",
+          "Does not include automatic cloud-link generation out-of-the-box"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "datadog",
+    "name": "Datadog",
+    "category": "Hosting & DevOps",
+    "whySwitch": "Datadog's pricing is extremely complex and scales aggressively per host and per metric, often becoming one of a startup's largest infrastructure bills. Open-source APM suites let you observe your stack at scale.",
+    "alternatives": [
+      {
+        "name": "SigNoz",
+        "description": "Open-source application performance monitoring (APM) and observability tool. The Datadog alternative.",
+        "url": "https://signoz.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Distributed tracing",
+          "Metrics aggregation",
+          "Log management",
+          "Alerting & anomaly detection"
+        ],
+        "pros": [
+          "Combines logs, traces, and metrics in a single UI",
+          "Built on OpenTelemetry standards",
+          "Extremely fast querying using ClickHouse database"
+        ],
+        "cons": [
+          "Requires significant storage and RAM for high-throughput apps",
+          "Fewer legacy integrations than Datadog"
+        ]
+      }
+    ]
   }
 ]
