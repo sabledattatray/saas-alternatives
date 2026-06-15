@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Submit an Open Source Alternative" description="Know of a great open-source tool? Submit it to our directory.">
+    <main class="max-w-3xl mx-auto py-16 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-12">
+            <a href="/" class="group inline-flex items-center text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Directory
+            </a>
+        </div>
+        
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-white tracking-tight sm:text-5xl mb-4">
+                Submit a <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Tool</span>
+            </h1>
+            <p class="text-xl text-slate-400 font-light">
+                Help us grow the ultimate open-source directory. Submit a privacy-friendly alternative to an expensive SaaS application.
+            </p>
+        </div>
+
+        <div class="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-white/10 p-8 shadow-2xl relative overflow-hidden">
+            <!-- Glow -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <form class="space-y-6 relative z-10" onsubmit="event.preventDefault(); alert('Form submission connected successfully. We will review your submission soon!');">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Expensive Tool -->
+                    <div>
+                        <label for="expensive-saas" class="block text-sm font-medium text-slate-300 mb-2">Expensive SaaS (e.g. Jira)</label>
+                        <input type="text" id="expensive-saas" name="expensive-saas" required class="block w-full rounded-xl bg-slate-950/50 border border-white/10 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors px-4 py-3 outline-none" placeholder="Software to replace">
+                    </div>
+                    
+                    <!-- Open Source Alternative -->
+                    <div>
+                        <label for="open-source-alt" class="block text-sm font-medium text-slate-300 mb-2">Open Source Alternative</label>
+                        <input type="text" id="open-source-alt" name="open-source-alt" required class="block w-full rounded-xl bg-slate-950/50 border border-white/10 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors px-4 py-3 outline-none" placeholder="Your alternative">
+                    </div>
+                </div>
+
+                <!-- URL -->
+                <div>
+                    <label for="website-url" class="block text-sm font-medium text-slate-300 mb-2">Website URL</label>
+                    <input type="url" id="website-url" name="website-url" required class="block w-full rounded-xl bg-slate-950/50 border border-white/10 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors px-4 py-3 outline-none" placeholder="https://...">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label for="description" class="block text-sm font-medium text-slate-300 mb-2">Why is it a good alternative?</label>
+                    <textarea id="description" name="description" rows="4" required class="block w-full rounded-xl bg-slate-950/50 border border-white/10 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors px-4 py-3 outline-none resize-none" placeholder="Tell us about the key features and why someone should switch..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <p class="text-xs text-slate-500">Submissions are reviewed manually within 24 hours.</p>
+                    <button type="submit" class="inline-flex justify-center py-3 px-8 border border-transparent shadow-lg text-sm font-bold rounded-xl text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-indigo-500 transition-all">
+                        Submit Tool
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</Layout>

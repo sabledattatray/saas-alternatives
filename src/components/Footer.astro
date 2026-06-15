@@ -1,0 +1,28 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-slate-950 border-t border-white/5 py-12 mt-20 relative z-10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-col items-center md:items-start">
+        <span class="text-xl font-bold text-white tracking-tight mb-2">OpenSource<span class="text-indigo-400">Alts</span></span>
+        <p class="text-slate-400 text-sm">Find the perfect open-source alternative for your workflow.</p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-8">
+        <a href="/" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Home</a>
+        <a href="/submit" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Submit Tool</a>
+        <a href="#" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t border-white/5 flex justify-between items-center flex-col md:flex-row">
+      <p class="text-slate-500 text-sm">
+        &copy; {currentYear} OpenSourceAlts. All rights reserved.
+      </p>
+      <div class="mt-4 md:mt-0 flex space-x-6">
+        <!-- Social links could go here -->
+      </div>
+    </div>
+  </div>
+</footer>

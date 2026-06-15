@@ -3,18 +3,25 @@
     "slug": "notion",
     "name": "Notion",
     "category": "Workspace & Notes",
+    "whySwitch": "Notion is powerful, but its proprietary format means you don't truly own your data. Switching to an open-source alternative guarantees data sovereignty, privacy, and the ability to self-host your company's knowledge base without paying per-seat subscriptions.",
     "alternatives": [
       {
         "name": "AppFlowy",
-        "description": "The open-source alternative to Notion. You are in charge of your data and customizations.",
+        "description": "The ultimate open-source alternative to Notion. You are in charge of your data and customizations.",
         "url": "https://appflowy.io",
-        "pricing": "Free / Open Source"
+        "pricing": "Free / Open Source",
+        "features": ["100% data control", "Offline mode", "Built with Flutter & Rust", "No vendor lock-in"],
+        "pros": ["Extremely fast performance", "Can be self-hosted easily", "Highly customizable"],
+        "cons": ["Mobile app is still in development", "Fewer third-party integrations than Notion"]
       },
       {
         "name": "Outline",
         "description": "A fast, collaborative, knowledge base for your team built on React and Node.js.",
         "url": "https://getoutline.com",
-        "pricing": "Self-hosted Free / Cloud Paid"
+        "pricing": "Self-hosted Free / Cloud Paid",
+        "features": ["Markdown support", "Team collaboration", "API access", "SSO integrations"],
+        "pros": ["Beautiful, Notion-like UI", "Great for enterprise wikis", "Fast search"],
+        "cons": ["Requires technical knowledge to self-host", "Cloud version can be pricey for small teams"]
       }
     ]
   },
@@ -22,12 +29,16 @@
     "slug": "mailchimp",
     "name": "Mailchimp",
     "category": "Email Marketing",
+    "whySwitch": "Mailchimp has drastically increased its prices and limited its free tier over the years. By self-hosting your email marketing, you only pay pennies for raw email delivery (via Amazon SES or Mailgun) rather than paying for subscriber lists.",
     "alternatives": [
       {
         "name": "Listmonk",
         "description": "High performance, self-hosted newsletter and mailing list manager with a modern dashboard.",
         "url": "https://listmonk.app",
-        "pricing": "Free / Open Source"
+        "pricing": "Free / Open Source",
+        "features": ["Fast multi-threaded sender", "Rich analytics", "Templating engine", "Subscriber management"],
+        "pros": ["Handles millions of emails easily", "Single Go binary (easy install)", "Very active community"],
+        "cons": ["Requires bringing your own SMTP provider", "No visual drag-and-drop builder"]
       }
     ]
   },
@@ -35,12 +46,16 @@
     "slug": "salesforce",
     "name": "Salesforce",
     "category": "CRM",
+    "whySwitch": "Salesforce is notoriously expensive, difficult to configure without hiring specialized consultants, and locks you into a complex ecosystem. Open-source CRMs give you full access to the source code and complete control over your customer data.",
     "alternatives": [
       {
         "name": "ErpNext",
         "description": "100% Open Source ERP. Everything you need to manage your business.",
         "url": "https://erpnext.com",
-        "pricing": "Free / Open Source"
+        "pricing": "Free / Open Source",
+        "features": ["Accounting", "HR & Payroll", "Manufacturing", "Sales & CRM"],
+        "pros": ["All-in-one suite", "No per-user pricing", "Highly customizable framework"],
+        "cons": ["Can be overwhelming to configure", "UI is utilitarian"]
       }
     ]
   }
