@@ -3,28 +3,60 @@ import Layout from '../layouts/Layout.astro';
 import saasData from '../data/saas.json';
 ---
 <Layout>
-    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h1 class="text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
-                Open Source <span class="text-indigo-600">Alternatives</span>
+    <main class="max-w-6xl mx-auto py-24 px-4 sm:px-6 lg:px-8 relative">
+        <!-- Hero Section -->
+        <div class="text-center mb-24 relative z-10">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-indigo-300 font-medium mb-6 hover:bg-white/10 transition-colors cursor-default">
+                <span class="flex h-2 w-2 rounded-full bg-indigo-500 mr-2 animate-pulse"></span>
+                The Ultimate Open-Source Directory
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+                Discover <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 drop-shadow-sm">Open Source</span><br/> Alternatives
             </h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto">
-                Discover free, open-source, and privacy-friendly alternatives to the most expensive SaaS applications on the market.
+            
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                Stop paying exorbitant subscription fees. We map the world's most expensive SaaS applications to their finest open-source, privacy-friendly replacements.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             {saasData.map((item) => (
-                <a href={`/alternative-to/${item.slug}`} class="block group">
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all p-6 h-full flex flex-col justify-between">
+                <a href={`/alternative-to/${item.slug}`} class="block group relative rounded-2xl p-px overflow-hidden bg-gradient-to-b from-white/10 to-transparent hover:from-indigo-500/50 hover:to-purple-500/50 transition-all duration-500 shadow-2xl shadow-black/50">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative bg-slate-900/90 backdrop-blur-xl rounded-[15px] p-8 h-full flex flex-col justify-between border border-white/5 group-hover:border-transparent transition-colors z-10 overflow-hidden">
+                        
+                        <!-- Decorative glow -->
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/30 transition-colors"></div>
+
                         <div>
-                            <span class="text-xs font-semibold tracking-wide uppercase text-indigo-600 mb-2 block">{item.category}</span>
-                            <h2 class="text-2xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
-                                Alternative to {item.name}
+                            <span class="inline-block px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-semibold tracking-wider uppercase mb-4 border border-indigo-500/20">
+                                {item.category}
+                            </span>
+                            
+                            <h2 class="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-300 group-hover:to-purple-300 transition-all">
+                                {item.name}
                             </h2>
+                            <p class="text-slate-400 mt-2 text-sm font-medium">Alternative</p>
                         </div>
-                        <div class="mt-4 text-sm text-gray-500">
-                            {item.alternatives.length} {item.alternatives.length === 1 ? 'Alternative' : 'Alternatives'} inside &rarr;
+                        
+                        <div class="mt-12 flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-indigo-500 flex items-center justify-center text-xs font-bold shadow-lg">
+                                    {item.alternatives.length}
+                                </div>
+                                <span class="ml-4 pl-2 text-sm font-medium text-slate-300">
+                                    {item.alternatives.length === 1 ? 'Replacement' : 'Replacements'}
+                                </span>
+                            </div>
+                            
+                            <div class="text-indigo-400 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </a>
