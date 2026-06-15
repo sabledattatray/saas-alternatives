@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "category": "Workspace & Notes",
+    "alternatives": [
+      {
+        "name": "AppFlowy",
+        "description": "The open-source alternative to Notion. You are in charge of your data and customizations.",
+        "url": "https://appflowy.io",
+        "pricing": "Free / Open Source"
+      },
+      {
+        "name": "Outline",
+        "description": "A fast, collaborative, knowledge base for your team built on React and Node.js.",
+        "url": "https://getoutline.com",
+        "pricing": "Self-hosted Free / Cloud Paid"
+      }
+    ]
+  },
+  {
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "category": "Email Marketing",
+    "alternatives": [
+      {
+        "name": "Listmonk",
+        "description": "High performance, self-hosted newsletter and mailing list manager with a modern dashboard.",
+        "url": "https://listmonk.app",
+        "pricing": "Free / Open Source"
+      }
+    ]
+  },
+  {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "category": "CRM",
+    "alternatives": [
+      {
+        "name": "ErpNext",
+        "description": "100% Open Source ERP. Everything you need to manage your business.",
+        "url": "https://erpnext.com",
+        "pricing": "Free / Open Source"
+      }
+    ]
+  }
+]

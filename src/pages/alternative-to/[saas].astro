@@ -1,0 +1,49 @@
+---
+import saasData from '../../data/saas.json';
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return saasData.map(item => ({
+    params: { saas: item.slug },
+    props: { data: item },
+  }));
+}
+
+const { data } = Astro.props;
+const pageTitle = `Free Open-Source Alternatives to ${data.name} (2026)`;
+const pageDescription = `Stop paying for ${data.name}. Discover the best free, open-source replacements for ${data.category}.`;
+---
+<Layout title={pageTitle} description={pageDescription}>
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+            <a href="/" class="text-indigo-600 hover:text-indigo-800 font-medium">&larr; Back to all alternatives</a>
+        </div>
+        <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-4">
+            Top Free Alternatives to {data.name}
+        </h1>
+        <p class="text-xl text-gray-500 mb-10">
+            Stop paying expensive subscriptions for {data.category} tools. Discover the best free and open-source replacements for {data.name}.
+        </p>
+
+        <div class="space-y-8">
+            {data.alternatives.map((alt) => (
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow p-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-900">{alt.name}</h2>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 mt-2">
+                                {alt.pricing}
+                            </span>
+                        </div>
+                        <a href={alt.url} target="_blank" rel="noopener noreferrer" class="mt-4 sm:mt-0 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Visit Website
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-600 text-lg">
+                        {alt.description}
+                    </p>
+                </div>
+            ))}
+        </div>
+    </main>
+</Layout>
