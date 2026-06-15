@@ -46,6 +46,27 @@
           "Requires technical knowledge to self-host",
           "Cloud version can be pricey for small teams"
         ]
+      },
+      {
+        "name": "Affine",
+        "description": "Next-generation collaborative workspace that merges docs, whiteboard, and database. Replaces Notion and Miro.",
+        "url": "https://affine.pro",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Markdown doc editor",
+          "Visual whiteboard canvas",
+          "Relational database tables",
+          "Offline-first sync"
+        ],
+        "pros": [
+          "Stunning interface design",
+          "Combines document text editing with whiteboard sketching seamlessly",
+          "Local-first storage for privacy"
+        ],
+        "cons": [
+          "Relatively new, so minor bugs might be present",
+          "Self-hosting dashboard requires Node setup"
+        ]
       }
     ]
   },
@@ -153,6 +174,27 @@
         "cons": [
           "UI is a bit dated compared to Slack",
           "Learning curve for the threading model"
+        ]
+      },
+      {
+        "name": "Rocket.Chat",
+        "description": "The open-source communication hub that puts privacy and collaboration first.",
+        "url": "https://rocket.chat",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Omnichannel messaging",
+          "Video/Voice calls",
+          "Matrix federation support",
+          "Custom apps store"
+        ],
+        "pros": [
+          "Huge selection of integrations",
+          "Supports full white-label branding",
+          "Active enterprise backing"
+        ],
+        "cons": [
+          "Setup of push notifications requires paid subscription or custom builds",
+          "Can be resource-intensive"
         ]
       }
     ]
@@ -599,6 +641,27 @@
           "Community is smaller than Supabase",
           "Database is document-based (MariaDB under the hood)"
         ]
+      },
+      {
+        "name": "PocketBase",
+        "description": "Open source Go backend in a single file. Realtime database, auth, file storage, and admin UI.",
+        "url": "https://pocketbase.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Realtime database (SQLite under the hood)",
+          "Embedded admin UI dashboard",
+          "File uploads & CDN support",
+          "Simple SDKs (JS/Dart)"
+        ],
+        "pros": [
+          "Single Go binary (easy deployment in seconds)",
+          "Very fast performance",
+          "Beautiful admin panel"
+        ],
+        "cons": [
+          "Limited to single-node scaling natively (doesn't scale horizontally easily)",
+          "SQLite limits concurrent write workloads"
+        ]
       }
     ]
   },
@@ -677,6 +740,27 @@
         "cons": [
           "Call quality can degrade with 50+ participants",
           "Mobile app is sometimes buggy"
+        ]
+      },
+      {
+        "name": "LiveKit",
+        "description": "Open-source WebRTC stack for real-time audio and video. Replaces Zoom APIs and Agora.",
+        "url": "https://livekit.io",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Real-time audio and video streaming",
+          "Multi-user videoconferencing APIs",
+          "SFU architecture",
+          "Server-side recording"
+        ],
+        "pros": [
+          "Developer-first WebRTC platform",
+          "Incredibly scalable infrastructure",
+          "Supports custom UI overlays"
+        ],
+        "cons": [
+          "Requires developer knowledge to build a videoconferencing client app",
+          "High server bandwidth costs"
         ]
       }
     ]
@@ -837,6 +921,27 @@
           "Fewer built-in project management tools than GitLab",
           "Lacks native CI/CD (requires pairing with Woodpecker or Act Runner)"
         ]
+      },
+      {
+        "name": "Forgejo",
+        "description": "A self-hosted lightweight software development service. Fork of Gitea.",
+        "url": "https://forgejo.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Lightweight Git hosting",
+          "Issue and bug tracking",
+          "Forgejo Actions (CI/CD compatible with GH Actions)",
+          "Packages registry"
+        ],
+        "pros": [
+          "100% community-governed and open",
+          "Very lightweight on server resources",
+          "Excellent built-in CI/CD platform"
+        ],
+        "cons": [
+          "Community is newer since the split from Gitea",
+          "Fewer third-party plugin integrations"
+        ]
       }
     ]
   },
@@ -916,6 +1021,27 @@
           "Not ideal for classical/waterfall project management",
           "Fewer enterprise-level integrations"
         ]
+      },
+      {
+        "name": "Redmine",
+        "description": "Flexible open-source web-based project management tool written in Ruby.",
+        "url": "https://www.redmine.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Multi-project support",
+          "Role-based access controls",
+          "Gantt charts & calendars",
+          "Wiki & forums"
+        ],
+        "pros": [
+          "Extremely stable and battle-tested over 15+ years",
+          "Massive catalog of free plugins",
+          "Highly flexible database structure"
+        ],
+        "cons": [
+          "UI looks dated and utilitarian",
+          "Lacks modern real-time drag-and-drop agile boards out-of-the-box (requires plugins)"
+        ]
       }
     ]
   },
@@ -944,6 +1070,27 @@
         "cons": [
           "Premium reports are limited on the free tier",
           "Some third-party channel integrations require paid API keys"
+        ]
+      },
+      {
+        "name": "Papercups",
+        "description": "Open-source live customer chat widget and dashboard. Replaces Intercom.",
+        "url": "https://papercups.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Live chat widget",
+          "Slack/Discord integrations",
+          "Email responses support",
+          "Elixir-powered backend"
+        ],
+        "pros": [
+          "Extremely fast and lightweight",
+          "Integrates directly with your engineering Slack channels",
+          "Beautiful React chat widget"
+        ],
+        "cons": [
+          "Fewer automated onboarding chatbots compared to Intercom",
+          "Project development has slowed"
         ]
       }
     ]
@@ -1290,6 +1437,27 @@
           "Less focused on photo retouching compared to Photoshop",
           "Text editor tool can be clunky to use"
         ]
+      },
+      {
+        "name": "Photopea",
+        "description": "Advanced web-based image editor that runs locally in your browser. Replaces Photoshop.",
+        "url": "https://www.photopea.com",
+        "pricing": "Free / Premium Paid",
+        "features": [
+          "Supports PSD, Sketch, XD, RAW formats",
+          "Layer styles & masks",
+          "Smart objects",
+          "Full keyboard shortcut compliance"
+        ],
+        "pros": [
+          "Interface is nearly identical to Photoshop (no relearning needed)",
+          "Runs directly in the browser with no installation",
+          "Excellent PSD parsing"
+        ],
+        "cons": [
+          "Not open-source (proprietary freemium model)",
+          "Shows sidebar advertisements on the free tier"
+        ]
       }
     ]
   },
@@ -1318,6 +1486,27 @@
         "cons": [
           "Unofficial implementation (not supported by Bitwarden Inc.)",
           "Requires manual updates and backups of database"
+        ]
+      },
+      {
+        "name": "Bitwarden Password Manager",
+        "description": "Highly trusted open-source password vault for teams and individuals.",
+        "url": "https://bitwarden.com",
+        "pricing": "Free / Premium Paid",
+        "features": [
+          "Cross-platform sync",
+          "Bitwarden directory sync support",
+          "Encrypted file attachments",
+          "Secure share links"
+        ],
+        "pros": [
+          "Fully audited open-source security models",
+          "Polished client apps across all platforms",
+          "Very active company backing"
+        ],
+        "cons": [
+          "Advanced organizational sharing requires premium tier",
+          "Self-hosting the full official stack is heavy"
         ]
       }
     ]
@@ -1853,6 +2042,1895 @@
         "cons": [
           "Setup is manual compared to the click-and-go experience of Copilot",
           "Autocomplete speed depends heavily on your local computer's speed or API latency"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "mixpanel",
+    "name": "Mixpanel",
+    "category": "Analytics",
+    "whySwitch": "Mixpanel charges you based on event volume and user profiles, which quickly becomes astronomical for apps with active user bases. Open-source product analytics platforms give you full event tracking, funnels, and session replays with zero data limits.",
+    "alternatives": [
+      {
+        "name": "PostHog",
+        "description": "The open-source product OS. Product analytics, session replays, feature flags, A/B testing.",
+        "url": "https://posthog.com",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Event pipelines and analytics",
+          "Session recordings",
+          "Feature flags & A/B tests",
+          "User path mapping"
+        ],
+        "pros": [
+          "Most complete product analytics suite available",
+          "Easy to self-host with Docker",
+          "Includes session replays for free"
+        ],
+        "cons": [
+          "Setting up custom events requires developer instrumentation",
+          "Self-hosted version is deprecated in favor of Cloud/Hobby due to Kubernetes complexity, but still widely used"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "grammarly",
+    "name": "Grammarly",
+    "category": "Workspace & Notes",
+    "whySwitch": "Grammarly transmits everything you type to their proprietary servers, raising significant privacy and security concerns for business and personal writing. Open-source style and grammar checkers verify your text locally or on your own server.",
+    "alternatives": [
+      {
+        "name": "LanguageTool",
+        "description": "Style and grammar checker for more than 30 languages. Open-source and privacy-friendly.",
+        "url": "https://languagetool.org",
+        "pricing": "Free / Premium Paid",
+        "features": [
+          "Multi-language grammar checking",
+          "Style recommendations",
+          "Personal dictionary",
+          "Browser extensions & Office add-ins"
+        ],
+        "pros": [
+          "Very high accuracy for multiple languages",
+          "Can be self-hosted via Docker for 100% offline checking",
+          "Fast performance"
+        ],
+        "cons": [
+          "Advanced style checking features require premium API key",
+          "Self-hosted server requires significant RAM for language models"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "category": "Customer Support",
+    "whySwitch": "Zendesk scales aggressively per agent seat and locks advanced triggers and automation behind premium tiers. Open-source helpdesks allow unlimited agents and complete customization of your ticketing queues.",
+    "alternatives": [
+      {
+        "name": "Zammad Helpdesk",
+        "description": "Open-source user support and helpdesk system with web chat, email, and social integrations.",
+        "url": "https://zammad.org",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Ticketing system",
+          "Customer history tracking",
+          "SLA definitions & alerts",
+          "Knowledge base"
+        ],
+        "pros": [
+          "Sleek and responsive web interface",
+          "Unlimited agents when self-hosted",
+          "Integrates email, telephone, and chat"
+        ],
+        "cons": [
+          "Requires Elasticsearch for fast search queries",
+          "Setup of phone and chat integrations takes some technical work"
+        ]
+      },
+      {
+        "name": "Helpy",
+        "description": "Modern self-hosted helpdesk and ticketing platform. Replaces Zendesk.",
+        "url": "https://helpy.io",
+        "pricing": "Free / Pro Paid",
+        "features": [
+          "Ticketing system",
+          "Knowledge base center",
+          "Multi-channel email support",
+          "Detailed support reports"
+        ],
+        "pros": [
+          "Clean and modern interface",
+          "Focused strictly on customer support tickets",
+          "GDPR compliance built-in"
+        ],
+        "cons": [
+          "Advanced features (like SSO or cloud integrations) require a Pro license",
+          "Smaller plugin ecosystem"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "heroku",
+    "name": "Heroku",
+    "category": "Hosting & DevOps",
+    "whySwitch": "Heroku eliminated its free tier and its pricing escalates dramatically for larger dynos. Self-hosting your own PaaS allows you to run dozens of apps on a cheap VPS with automatic SSL and git deployments.",
+    "alternatives": [
+      {
+        "name": "Dokku",
+        "description": "A Docker-powered PaaS that helps you build and manage the lifecycle of applications.",
+        "url": "https://dokku.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Git push deployments",
+          "Docker-powered scaling",
+          "Automatic SSL certificate generation",
+          "Database plugins"
+        ],
+        "pros": [
+          "Extremely lightweight (runs on a $5/month server)",
+          "Simple Heroku-like workflow",
+          "Huge ecosystem of official plugins"
+        ],
+        "cons": [
+          "Command-line only (no built-in web dashboard)",
+          "Limited to a single host server natively"
+        ]
+      },
+      {
+        "name": "CapRover",
+        "description": "Easy to use app/database deployment & web server manager. Extremely lightweight.",
+        "url": "https://caprover.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Web GUI dashboard",
+          "One-click app deployments (WordPress, MySQL, etc)",
+          "Automatic Let's Encrypt SSL",
+          "Clustering support"
+        ],
+        "pros": [
+          "Very user-friendly web interface",
+          "One-click templates make deploying databases and tools instant",
+          "Supports Docker Swarm for multi-server scaling"
+        ],
+        "cons": [
+          "Less custom buildpack configuration compared to Dokku",
+          "Web GUI dashboard must be secured carefully"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "mailgun",
+    "name": "Mailgun",
+    "category": "Email Marketing",
+    "whySwitch": "Mailgun has raised its base pricing and removed legacy free tiers. Switching to open-source mail delivery platforms allows you to route transactional emails through your own server IPs with no volume constraints.",
+    "alternatives": [
+      {
+        "name": "Postal Delivery",
+        "description": "Complete SMTP server and mail delivery system. Alternative to Mailgun and SendGrid.",
+        "url": "https://github.com/postalserver/postal",
+        "pricing": "Free / Open Source",
+        "features": [
+          "SMTP & HTTP delivery APIs",
+          "IP pooling & reputation management",
+          "Click and open tracking",
+          "Spam analysis integrations"
+        ],
+        "pros": [
+          "Fully featured interface for managing multiple domains",
+          "Very high performance",
+          "Open source with active support"
+        ],
+        "cons": [
+          "Requires advanced network and DNS skills to avoid spam folders",
+          "Requires strict IP monitoring"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "pipedrive",
+    "name": "Pipedrive",
+    "category": "CRM",
+    "whySwitch": "Pipedrive charges per user and restricts custom fields and pipeline volumes. Open-source CRMs let you customize your sales pipelines, store infinite customer details, and keep your business data private.",
+    "alternatives": [
+      {
+        "name": "Odoo CRM",
+        "description": "Open-source CRM to track leads, close opportunities, and get accurate forecasts.",
+        "url": "https://www.odoo.com",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Sales pipeline manager",
+          "Lead automation",
+          "Customer portal",
+          "Reporting & dashboards"
+        ],
+        "pros": [
+          "Highly modular (integrates with accounting, inventory, etc)",
+          "Modern and clean user interface",
+          "Extensive app library"
+        ],
+        "cons": [
+          "Some essential business features require Enterprise subscription",
+          "Setup and migration can be complex"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "asana",
+    "name": "Asana",
+    "category": "Project Management",
+    "whySwitch": "Asana locks timeline views, custom fields, and task dependencies behind expensive paid tiers. Open-source task managers provide all features for free, ensuring you can manage complex projects without pricing pressure.",
+    "alternatives": [
+      {
+        "name": "Vikunja",
+        "description": "The open-source, self-hostable to-do app to organize your life and team.",
+        "url": "https://vikunja.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "List, Gantt, Kanban, and Table views",
+          "Task relationships & dependencies",
+          "Collaborative namespaces",
+          "CalDAV sync support"
+        ],
+        "pros": [
+          "Incredibly clean, fast, and modern interface",
+          "Supports all view types (Gantt, Kanban, List) for free",
+          "Excellent task filtering and search"
+        ],
+        "cons": [
+          "Mobile apps are still in early stages",
+          "Fewer enterprise administration tools"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "canva",
+    "name": "Canva",
+    "category": "Design & Creative",
+    "whySwitch": "Canva is proprietary, cloud-only, and locks premium assets behind paid plans. Open-source collaborative graphic design suites let you create vector graphics, social media posts, and design mockups for free with native SVG.",
+    "alternatives": [
+      {
+        "name": "Penpot Vector",
+        "description": "Open-source web-based vector design and prototyping platform. Replaces Canva and Figma.",
+        "url": "https://penpot.app",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Vector graphics engine",
+          "CSS Flexbox and Grid support",
+          "Interactive prototyping",
+          "SVG native format"
+        ],
+        "pros": [
+          "Runs smoothly in any web browser",
+          "Allows infinite team members with no subscription limits",
+          "Fully open-source and easy to host"
+        ],
+        "cons": [
+          "Fewer pre-made templates and stock photo libraries compared to Canva",
+          "Steeper learning curve for pure vector design"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "wix",
+    "name": "Wix",
+    "category": "Design & Creative",
+    "whySwitch": "Wix uses proprietary code that cannot be exported, locking your website into their platform. Open-source CMS platforms let you export your entire site, choose your own hosting, and customize every line of HTML and CSS.",
+    "alternatives": [
+      {
+        "name": "WordPress Core",
+        "description": "The open-source publishing software that powers over 43% of the web.",
+        "url": "https://wordpress.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Block editor (Gutenberg)",
+          "Thousands of free themes & plugins",
+          "Complete content database",
+          "Rest API support"
+        ],
+        "pros": [
+          "Largest web development community in the world",
+          "Endless customization potential via plugins",
+          "Easy to host on any server"
+        ],
+        "cons": [
+          "Requires security maintenance and regular updates",
+          "Can become slow without caching and optimization"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "onedrive",
+    "name": "OneDrive",
+    "category": "Workspace & Notes",
+    "whySwitch": "Microsoft OneDrive scans your file storage and integrates proprietary tracking systems. Switching to open-source personal cloud hosting protects your documents and gives you unlimited storage on your own server.",
+    "alternatives": [
+      {
+        "name": "Nextcloud Hub",
+        "description": "The self-hosted alternative to Microsoft 365 and OneDrive. Sync your files, contacts, and emails.",
+        "url": "https://nextcloud.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "File sync & sharing",
+          "Online office suite (OnlyOffice integration)",
+          "Groupware (calendar, mail, contacts)",
+          "Encrypted folders"
+        ],
+        "pros": [
+          "Complete office suite that replaces Microsoft OneDrive and Office 365",
+          "100% data sovereignty",
+          "Highly active community with thousands of add-ons"
+        ],
+        "cons": [
+          "Requires server administration knowledge to keep database optimized",
+          "Requires a higher-spec VPS to run office suites smoothly"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "miro",
+    "name": "Miro",
+    "category": "Workspace & Notes",
+    "whySwitch": "Miro's free tier limits you to three editable boards and charges high subscription fees for collaboration. Open-source whiteboard tools provide infinite canvas sizes, absolute data ownership, and self-hosted options for secure team brainstorming.",
+    "alternatives": [
+      {
+        "name": "Excalidraw",
+        "description": "Virtual whiteboard for sketching hand-drawn like diagrams. Collaborative and highly intuitive.",
+        "url": "https://excalidraw.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Hand-drawn aesthetic",
+          "Real-time collaboration",
+          "Local-first storage",
+          "Image export (PNG, SVG)"
+        ],
+        "pros": [
+          "Extremely simple to use",
+          "Great for quick wireframes and diagrams",
+          "No account required"
+        ],
+        "cons": [
+          "Lacks advanced diagramming tools like Gantt charts",
+          "No built-in video conferencing"
+        ]
+      },
+      {
+        "name": "tldraw",
+        "description": "A tiny, fast, and feature-rich digital whiteboard and drawing canvas for the web.",
+        "url": "https://tldraw.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Vector-based canvas",
+          "Multiplayer collaboration",
+          "Rich shape library",
+          "Developer-friendly API"
+        ],
+        "pros": [
+          "Extremely lightweight and fast",
+          "Easy to embed in other web apps",
+          "Infinite grid and smooth zooming"
+        ],
+        "cons": [
+          "Smaller community than Excalidraw",
+          "Fewer pre-made templates"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "retool",
+    "name": "Retool",
+    "category": "Developer Tools",
+    "whySwitch": "Retool charges per user, making internal tools extremely expensive as your non-technical team grows. Open-source internal tool builders let you connect to databases, build drag-and-drop GUIs, and self-host for unlimited users.",
+    "alternatives": [
+      {
+        "name": "Appsmith",
+        "description": "Build internal tools, admin panels, dashboards, and workflows fast. Drag and drop UI components.",
+        "url": "https://www.appsmith.com",
+        "pricing": "Free / Commercial Self-hosted",
+        "features": [
+          "Drag-and-drop page builder",
+          "Javascript integrations",
+          "45+ database connectors",
+          "Git-based version control"
+        ],
+        "pros": [
+          "Highly mature component library",
+          "Supports complex JS coding inside components",
+          "Robust self-hosting capabilities"
+        ],
+        "cons": [
+          "Requires basic JS knowledge to build advanced flows",
+          "Cloud version has performance constraints on free tier"
+        ]
+      },
+      {
+        "name": "ToolJet",
+        "description": "Open-source low-code framework to build and deploy internal tools with minimal engineering effort.",
+        "url": "https://tooljet.com",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Visual app builder",
+          "Custom widget integration",
+          "Connects to PostgreSQL, MongoDB, Slack",
+          "Multi-page app support"
+        ],
+        "pros": [
+          "Written in TypeScript",
+          "Extremely easy to deploy via Docker",
+          "Clean, responsive grid editor"
+        ],
+        "cons": [
+          "Fewer complex charts and tables than Retool",
+          "Smaller plugin ecosystem"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tableau",
+    "name": "Tableau",
+    "category": "Analytics",
+    "whySwitch": "Tableau is extremely expensive, resource-heavy, and requires dedicated analysts to build dashboards. Open-source business intelligence tools let you query databases, build beautiful charts, and share insights across your team for free.",
+    "alternatives": [
+      {
+        "name": "Metabase",
+        "description": "The easiest, fastest way to share data and analytics inside your company.",
+        "url": "https://www.metabase.com",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "No-code query builder",
+          "SQL editor",
+          "Interactive dashboards",
+          "Slack/Email report scheduling"
+        ],
+        "pros": [
+          "Incredibly user-friendly for non-technical teams",
+          "Fast setup and connection to databases",
+          "Beautiful default visualization styles"
+        ],
+        "cons": [
+          "Advanced permission controls are locked behind enterprise plans",
+          "Complex analytical models still require raw SQL"
+        ]
+      },
+      {
+        "name": "Apache Superset",
+        "description": "A modern, enterprise-ready business intelligence web application. Highly scalable.",
+        "url": "https://superset.apache.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Rich visualization library",
+          "SQL IDE",
+          "Granular security model",
+          "Scales to cloud-scale data Warehouses"
+        ],
+        "pros": [
+          "Massive selection of chart types",
+          "Excellent performance with high volumes of data",
+          "Highly customizable permissions"
+        ],
+        "cons": [
+          "Steep learning curve to install and configure",
+          "UI can be overwhelming for casual business users"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "okta",
+    "name": "Okta",
+    "category": "Security",
+    "whySwitch": "Okta's pricing scales aggressively per user and has suffered security breaches. Switching to open-source identity and access management (IAM) platforms gives you complete control over authentication logs and user credentials.",
+    "alternatives": [
+      {
+        "name": "Authentik",
+        "description": "An open-source Identity Provider focused on flexibility and versatility.",
+        "url": "https://goauthentik.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Single Sign-On (SSO)",
+          "Multi-factor authentication (MFA)",
+          "User synchronization",
+          "Custom flows and policies"
+        ],
+        "pros": [
+          "Beautiful dashboard and setup wizard",
+          "Supports SAML, OIDC, and LDAP out of the box",
+          "Extremely flexible policy engine"
+        ],
+        "cons": [
+          "Requires technical knowledge to configure complex SSO flows",
+          "Heavy resource footprint"
+        ]
+      },
+      {
+        "name": "Zitadel",
+        "description": "The Next-Generation IAM. Identity infrastructure for developers and enterprises.",
+        "url": "https://zitadel.com",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Multi-tenancy",
+          "Audit trails",
+          "Passwordless authentication",
+          "OIDC/OAuth compliance"
+        ],
+        "pros": [
+          "Designed with a focus on API-first multi-tenant SaaS",
+          "Written in Go; fast and lightweight",
+          "Modern administrative UI"
+        ],
+        "cons": [
+          "Documentation can be dense",
+          "Setting up custom identity brokering requires coding"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "bitly",
+    "name": "Bitly",
+    "category": "Marketing",
+    "whySwitch": "Bitly restricts custom domains, limits the number of redirects on free tiers, and charges high subscription fees for link analytics. Open-source url shorteners let you host unlimited links, track detailed visitor geolocation, and use custom branding.",
+    "alternatives": [
+      {
+        "name": "Dub.co",
+        "description": "The open-source link management infrastructure for modern marketing teams.",
+        "url": "https://dub.co",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Advanced analytics",
+          "Custom domains",
+          "QR code generator",
+          "API & webhooks"
+        ],
+        "pros": [
+          "Stunning UI dashboard",
+          "Very fast redirects (built on Vercel Edge)",
+          "Comprehensive analytics filters"
+        ],
+        "cons": [
+          "Self-hosting is less documented than standard Docker apps",
+          "Requires a Redis and Prisma setup"
+        ]
+      },
+      {
+        "name": "Shlink",
+        "description": "A self-hosted, open-source URL shortener with a REST API and a CLI.",
+        "url": "https://shlink.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "REST API",
+          "Geolocated visits tracking",
+          "Custom slugs",
+          "Multi-domain support"
+        ],
+        "pros": [
+          "Extremely lightweight",
+          "Completely self-contained with Docker",
+          "Easy to automate via API and CLI"
+        ],
+        "cons": [
+          "No official built-in UI (requires connecting to a separate web client UI)",
+          "Configuring geolite database requires API keys"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "crowdin",
+    "name": "Crowdin",
+    "category": "Developer Tools",
+    "whySwitch": "Crowdin charges based on word count, string volume, and translation seats, creating cost bottlenecks for multi-language apps. Open-source translation platforms let you manage unlimited strings, integrate with git, and self-host.",
+    "alternatives": [
+      {
+        "name": "Tolgee",
+        "description": "Developer-friendly open-source localization platform with in-context editing.",
+        "url": "https://tolgee.io",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "In-context translation",
+          "One-click screenshots",
+          "Machine translation integration",
+          "Git integrations"
+        ],
+        "pros": [
+          "Translate directly on the web app in real-time",
+          "Excellent SDKs for React, Angular, Vue",
+          "Beautiful dashboard UI"
+        ],
+        "cons": [
+          "Requires SDK instrumentation in code",
+          "Self-hosting requires database configuration"
+        ]
+      },
+      {
+        "name": "Weblate",
+        "description": "Web-based continuous localization system tightly integrated with git and version control.",
+        "url": "https://weblate.org",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Git integration (automatic commits)",
+          "Translation memory",
+          "Quality checks",
+          "Supports 150+ file formats"
+        ],
+        "pros": [
+          "Mature and highly customizable",
+          "Direct sync with GitHub/GitLab repositories",
+          "Very active open-source community"
+        ],
+        "cons": [
+          "Interface feels a bit dated and functional",
+          "Setup can be complex for beginners"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "pagerduty",
+    "name": "PagerDuty",
+    "category": "Hosting & DevOps",
+    "whySwitch": "PagerDuty charges expensive licensing fees per user, forcing startups to restrict on-call notifications to only a few engineers. Open-source incident alert systems let you configure custom schedules, SMS routing, and escalation paths for free.",
+    "alternatives": [
+      {
+        "name": "GoAlert",
+        "description": "Open-source on-call scheduling, automated escalations, and notifications. Built by Target.",
+        "url": "https://goalert.me",
+        "pricing": "Free / Open Source",
+        "features": [
+          "On-call shifts & rotations",
+          "SMS, Voice, and Email alerts",
+          "Escalation policies",
+          "Slack integration"
+        ],
+        "pros": [
+          "Battle-tested in enterprise settings",
+          "Simple to configure scheduling calendar",
+          "Completely free with no user limits"
+        ],
+        "cons": [
+          "Requires configuring Twilio API keys for SMS and Voice",
+          "Lacks some advanced analytics reports"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "hootsuite",
+    "name": "Hootsuite",
+    "category": "Marketing",
+    "whySwitch": "Hootsuite has eliminated its free tier and its basic plans cost hundreds of dollars a year. Open-source social media schedulers let you connect multiple social profiles, queue posts, and view calendars for free.",
+    "alternatives": [
+      {
+        "name": "Mixpost",
+        "description": "Self-hosted social media management software. Schedule posts, view calendars, and track analytics.",
+        "url": "https://mixpost.app",
+        "pricing": "Free / Pro Paid",
+        "features": [
+          "Social media queue",
+          "Visual calendar scheduler",
+          "Multi-profile support",
+          "Detailed analytics"
+        ],
+        "pros": [
+          "Beautiful dashboard and calendar layouts",
+          "Support for Mastodon, Twitter, Facebook, YouTube, Pinterest",
+          "Very simple Docker setup"
+        ],
+        "cons": [
+          "Advanced features (like team collaboration) require a Pro license",
+          "Configuring API connections for social platforms takes technical setup"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "monday",
+    "name": "Monday.com",
+    "category": "Project Management",
+    "whySwitch": "Monday.com's pricing scales based on seat tiers, forcing you to pay for unused licenses, and restricts workflows on cheaper tiers. Open-source task managers offer unlimited customizable grids, Gantt charts, and boards.",
+    "alternatives": [
+      {
+        "name": "Leantime",
+        "description": "Lean project management system for innovators and startups. Replaces Monday and ClickUp.",
+        "url": "https://leantime.co",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Kanban & Table views",
+          "Gantt charts",
+          "Retrospectives & Idea boards",
+          "Time tracking"
+        ],
+        "pros": [
+          "Designed specifically for product development and startups",
+          "Very clean, intuitive user interface",
+          "Excellent goal-oriented tracking"
+        ],
+        "cons": [
+          "Fewer automation triggers out-of-the-box compared to Monday",
+          "Custom integrations require plugins"
+        ]
+      },
+      {
+        "name": "Planka Board",
+        "description": "Elegant open-source Kanban board built with React and Redux.",
+        "url": "https://planka.app",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Real-time boards",
+          "Task descriptions and attachments",
+          "Member cards assignments",
+          "Simple Docker setup"
+        ],
+        "pros": [
+          "Visually stunning and extremely clean",
+          "Fast interface response",
+          "Completely free"
+        ],
+        "cons": [
+          "Lacks Monday's grid database and formula capabilities",
+          "Fewer integrations"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "linktree",
+    "name": "Linktree",
+    "category": "Marketing",
+    "whySwitch": "Linktree restricts custom domains, places their logo on your page, and limits layout analytics on the free tier. Open-source 'link-in-bio' tools let you host your own responsive portals, track detailed redirects, and style pages completely.",
+    "alternatives": [
+      {
+        "name": "LinkStack",
+        "description": "A unique self-hosted Linktree alternative. Customize your links, buttons, and design.",
+        "url": "https://linkstack.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Unlimited links",
+          "Custom theme customizer",
+          "Visitor analytics",
+          "User dashboard management"
+        ],
+        "pros": [
+          "Highly customizable layout",
+          "Supports user registration (can run a service)",
+          "One-click install options"
+        ],
+        "cons": [
+          "Admin panel takes time to master",
+          "Fewer third-party widget integrations than Linktree"
+        ]
+      },
+      {
+        "name": "LittleLink",
+        "description": "A lightweight HTML template that helps you build a clean, responsive link-in-bio website.",
+        "url": "https://littlelink.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "CSS variables for fast styling",
+          "SVG icons for 100+ services",
+          "Static site delivery",
+          "No JavaScript required"
+        ],
+        "pros": [
+          "Incredibly lightweight (loads in milliseconds)",
+          "Can be hosted for free on GitHub Pages/Cloudflare",
+          "No database or admin panel required"
+        ],
+        "cons": [
+          "No database (must edit HTML/config files manually)",
+          "No built-in analytics dashboard"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "pusher",
+    "name": "Pusher",
+    "category": "Developer Tools",
+    "whySwitch": "Pusher charges based on connection counts and message volumes, leading to high operational bills for realtime web chats or live dashboards. Open-source WebSocket servers let you scale connections on your own servers.",
+    "alternatives": [
+      {
+        "name": "Soketi",
+        "description": "Simple, fast, and resilient open-source WebSocket server. Compatible with Pusher SDKs.",
+        "url": "https://soketi.app",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Pusher Protocol compatible",
+          "Written in TypeScript (uWebSockets.js)",
+          "Horizontal scaling",
+          "Detailed usage metrics"
+        ],
+        "pros": [
+          "No client code changes needed to migrate from Pusher",
+          "Extremely fast performance and low RAM usage",
+          "Easy to deploy on Docker/VPS"
+        ],
+        "cons": [
+          "Requires managing your own network sockets and SSL",
+          "Fewer hosted cloud dashboard debugging tools"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "feedly",
+    "name": "Feedly",
+    "category": "Workspace & Notes",
+    "whySwitch": "Feedly hides advanced integrations, search capabilities, and high-frequency updates behind paid plans. Open-source feed readers let you subscribe to infinite RSS feeds, read articles distraction-free, and self-host.",
+    "alternatives": [
+      {
+        "name": "FreshRSS",
+        "description": "A self-hostable aggregator that is lightweight, easy to use, and powerful.",
+        "url": "https://freshrss.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Responsive mobile-friendly UI",
+          "Multi-user support",
+          "CLI operations",
+          "Extensions API"
+        ],
+        "pros": [
+          "Incredibly fast and uses minimal server resources",
+          "Extensive plugins to scrape site contents",
+          "Integrates with mobile RSS apps (via Fever/GReader APIs)"
+        ],
+        "cons": [
+          "UI is simple and functional, not as sleek as Feedly",
+          "Requires manual server setup"
+        ]
+      },
+      {
+        "name": "Miniflux",
+        "description": "Minimalist and opinionated feed reader. Written in Go, it is fast and clean.",
+        "url": "https://miniflux.app",
+        "pricing": "Free / Open Source",
+        "features": [
+          "No-nonsense minimalist design",
+          "Fetches full content of truncated feeds",
+          "Built-in scraper",
+          "REST API & custom headers"
+        ],
+        "pros": [
+          "Blazing fast performance",
+          "Zero distractions and no advertisements",
+          "Keyboard shortcut support"
+        ],
+        "cons": [
+          "Extremely minimalist (no graphical dashboards)",
+          "Requires PostgreSQL database"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "spotify",
+    "name": "Spotify",
+    "category": "Media & Entertainment",
+    "whySwitch": "Spotify's monthly subscription costs continue to rise, and you don't own the audio files you stream. Open-source media servers let you host your own music collection, stream high-fidelity audio, and share playlists without ads.",
+    "alternatives": [
+      {
+        "name": "Navidrome",
+        "description": "Modern, self-hosted music server and streamer. Compatible with Subsonic clients.",
+        "url": "https://www.navidrome.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Subsonic API support",
+          "Tracks metadata automatically",
+          "Multi-platform sync",
+          "Very low system footprint"
+        ],
+        "pros": [
+          "Runs perfectly on a Raspberry Pi",
+          "Beautiful modern web interface",
+          "Supports transcoding on the fly"
+        ],
+        "cons": [
+          "Lacks built-in recommendation algorithms",
+          "Requires having your own music library in MP3/FLAC format"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "netflix",
+    "name": "Netflix",
+    "category": "Media & Entertainment",
+    "whySwitch": "Netflix restricts password sharing, rotates available content, and charges monthly fees. Self-hosting your video library with open-source media centers lets you stream high-definition movies and shows on any device.",
+    "alternatives": [
+      {
+        "name": "Jellyfin",
+        "description": "The volunteer-built media solution that puts you in control of your media.",
+        "url": "https://jellyfin.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "No tracking or subscription fees",
+          "Live TV and DVR support",
+          "On-the-fly hardware transcoding",
+          "Clients for Android TV, Roku, Apple TV"
+        ],
+        "pros": [
+          "100% free and open source with no premium upsells (unlike Plex)",
+          "Supports hardware acceleration",
+          "Clean user profiles and metadata scraping"
+        ],
+        "cons": [
+          "Setting up remote access requires some network skills",
+          "Roku and Apple TV apps are still improving in stability"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "steam",
+    "name": "Steam",
+    "category": "Media & Entertainment",
+    "whySwitch": "Steam is a proprietary digital storefront and launcher that locks your game library to their client. Open-source launchers aggregate your library from Epic, GOG, and Steam, making gaming portable.",
+    "alternatives": [
+      {
+        "name": "Heroic Games Launcher",
+        "description": "Open-source game launcher for Epic Games, GOG, and Amazon Games. Available on Linux, Windows, macOS.",
+        "url": "https://heroicgameslauncher.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Run Windows games on Linux/macOS via Wine/Proton",
+          "Saves cloud sync",
+          "Clean dashboard UI",
+          "Integrates with ProtonUp-Qt"
+        ],
+        "pros": [
+          "Incredibly lightweight and fast compared to Steam or Epic launcher",
+          "Highly customizable game launching settings",
+          "Excellent support for handhelds like the Steam Deck"
+        ],
+        "cons": [
+          "Cannot buy games directly from the launcher (requires a web browser)",
+          "Initial configuration for non-native games takes time"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "substack",
+    "name": "Substack",
+    "category": "Workspace & Notes",
+    "whySwitch": "Substack takes a 10% transaction cut on all paid subscriptions and keeps your newsletter layout strictly unified. Open-source publishing platforms allow you to send newsletters for free (via SMTP) and retain 100% of your earnings.",
+    "alternatives": [
+      {
+        "name": "Ghost CMS",
+        "description": "Independent technology for modern publishing. Powers blogs, memberships, and newsletters.",
+        "url": "https://ghost.org",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Rich text editor",
+          "Newsletter email delivery",
+          "Stripe membership integration",
+          "Clean, modern theme engine"
+        ],
+        "pros": [
+          "Beautiful default designs",
+          "Zero transaction fees (keep 100% of Stripe billing)",
+          "Highly optimized for SEO"
+        ],
+        "cons": [
+          "Requires command-line knowledge to deploy self-hosted version",
+          "Upgrading self-hosted nodes requires regular backups"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "google-classroom",
+    "name": "Google Classroom",
+    "category": "Education",
+    "whySwitch": "Google Classroom locks educational institutions into the Google Workspace ecosystem and collects student usage data. Open-source learning management systems (LMS) give educators full data ownership and grading customization.",
+    "alternatives": [
+      {
+        "name": "Moodle",
+        "description": "The world's most customizable and trusted online learning management system.",
+        "url": "https://moodle.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Course creators & lesson builders",
+          "Gradebook and quizzes",
+          "Student forums & wikis",
+          "Modular plugin architecture"
+        ],
+        "pros": [
+          "Massive collection of educational modules",
+          "Used by thousands of universities globally",
+          "Highly robust security features"
+        ],
+        "cons": [
+          "UI feels dated and corporate",
+          "Requires administrative knowledge to scale to thousands of students"
+        ]
+      },
+      {
+        "name": "Canvas LMS",
+        "description": "The open-source learning management platform that simplifies teaching and learning.",
+        "url": "https://www.instructure.com/canvas",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Student dashboards",
+          "SpeedGrader grading tool",
+          "Calender and schedules",
+          "Integration APIs"
+        ],
+        "pros": [
+          "Modern, clean, and intuitive user interface",
+          "Excellent mobile apps for teachers and students",
+          "Powerful grading and assessment views"
+        ],
+        "cons": [
+          "Self-hosting is highly complex to configure",
+          "Some enterprise integration modules are closed-source"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "unsplash",
+    "name": "Unsplash",
+    "category": "Design & Creative",
+    "whySwitch": "Unsplash changed its license terms over the years, locked premium photos behind 'Unsplash+', and is owned by Getty Images. Open-source media search engines let you find royalty-free graphics across multiple open repositories.",
+    "alternatives": [
+      {
+        "name": "Openverse",
+        "description": "An open source search engine for open-licensed media. Access over 700 million creative works.",
+        "url": "https://openverse.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Creative Commons search",
+          "Audio and image filters",
+          "Attribution generator",
+          "Integrates with WordPress"
+        ],
+        "pros": [
+          "Searches across dozens of databases (Flickr, Wikimedia, etc.)",
+          "Completely open-source and non-commercial",
+          "Generates copy-paste attribution text automatically"
+        ],
+        "cons": [
+          "Image resolution varies widely compared to Unsplash",
+          "No unified submission portal (aggregates other sites)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cloudflare",
+    "name": "Cloudflare",
+    "category": "Hosting & DevOps",
+    "whySwitch": "Cloudflare is a giant proxy service that acts as a single point of failure for a large percentage of the internet. Open-source reverse proxies and DNS engines let you manage your own edge routing and domain resolution locally.",
+    "alternatives": [
+      {
+        "name": "Nginx Proxy Manager",
+        "description": "Docker container for easily managing Nginx proxy hosts with a clean web user interface.",
+        "url": "https://nginxproxymanager.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Proxy hosting setup",
+          "Automatic SSL via Let's Encrypt",
+          "Access lists & user logins",
+          "Forward auth support"
+        ],
+        "pros": [
+          "Beautiful web UI; no need to write Nginx config files",
+          "Secures multiple apps on a single server",
+          "Fast performance"
+        ],
+        "cons": [
+          "Does not include DDoS protection out-of-the-box like Cloudflare CDN",
+          "No built-in analytics dashboard"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "elasticsearch",
+    "name": "Elasticsearch",
+    "category": "Search",
+    "whySwitch": "Elasticsearch modified its licensing model from open-source to proprietary, triggering high license costs. Open-source distributed search engines let you index logs and execute fast queries without licensing fees.",
+    "alternatives": [
+      {
+        "name": "OpenSearch",
+        "description": "Flexible, scalable, and open-source search and analytics suite. Forked from Elasticsearch.",
+        "url": "https://opensearch.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Distributed search engine",
+          "Log analytics dashboard (OpenSearch Dashboards)",
+          "Security plugin with SSO",
+          "Machine learning connections"
+        ],
+        "pros": [
+          "100% compatible with existing Elasticsearch APIs",
+          "Completely open-source Apache 2.0 license",
+          "Supported by AWS and other tech giants"
+        ],
+        "cons": [
+          "Requires significant server RAM and storage",
+          "Setup can be intimidating for single-host projects"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tabnine",
+    "name": "Tabnine",
+    "category": "AI",
+    "whySwitch": "Tabnine is proprietary and can be expensive for teams. Open-source coding assistants let you run localized models directly in your editor, keeping code telemetry 100% private.",
+    "alternatives": [
+      {
+        "name": "Tabby",
+        "description": "A self-hosted AI coding assistant. An open-source alternative to GitHub Copilot and Tabnine.",
+        "url": "https://tabby.tabbyml.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Self-hosted engine",
+          "Multi-language autocomplete",
+          "Model fine-tuning support",
+          "VS Code & JetBrains extensions"
+        ],
+        "pros": [
+          "Extremely secure and private",
+          "Supports consumer GPUs",
+          "Easy configuration via YAML"
+        ],
+        "cons": [
+          "Requires server hosting for team setups",
+          "Autocomplete latency depends on hardware spec"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "activecampaign",
+    "name": "ActiveCampaign",
+    "category": "Email Marketing",
+    "whySwitch": "ActiveCampaign's pricing scales up rapidly based on contacts and limits email automation flows on lower tiers. Open-source email systems allow unlimited automation campaigns and contacts on your own infrastructure.",
+    "alternatives": [
+      {
+        "name": "Keila",
+        "description": "Open-source newsletter tool. Clean, reliable, and privacy-focused email marketing.",
+        "url": "https://www.keila.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Visual campaign builder",
+          "Detailed statistics",
+          "Subscriber segments",
+          "GDPR compliance"
+        ],
+        "pros": [
+          "Very modern and clean interface",
+          "Simple self-hosting via Docker",
+          "Fast and lightweight"
+        ],
+        "cons": [
+          "Fewer complex lead scoring systems compared to ActiveCampaign",
+          "No built-in CRM sync"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "patreon",
+    "name": "Media & Entertainment",
+    "category": "Media & Entertainment",
+    "whySwitch": "Patenon takes a high platform commission cut (up to 12%) plus payment processing fees on your monthly support earnings. Open-source tipping and membership systems let you connect directly to Stripe and keep 100% of your support.",
+    "alternatives": [
+      {
+        "name": "Liberapay",
+        "description": "An open-source recurrent donation platform. No platform fees, 100% community funded.",
+        "url": "https://liberapay.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Recurrent weekly/monthly donations",
+          "Multi-currency support",
+          "Public/private profiles",
+          "No platform fees"
+        ],
+        "pros": [
+          "Completely free platform with zero profit cuts",
+          "Great for open-source developers",
+          "Decentralized trust"
+        ],
+        "cons": [
+          "Lacks gated-content hosting (strictly for donations, not for hosting exclusive posts)",
+          "No built-in digital downloads store"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "vimeo",
+    "name": "Vimeo",
+    "category": "Media & Entertainment",
+    "whySwitch": "Vimeo has strict bandwidth limits, locks basic embedding configurations behind expensive paid plans, and has closed-source player telemetry. Open-source video hosting networks allow you to customize players and self-host.",
+    "alternatives": [
+      {
+        "name": "PeerTube",
+        "description": "A free, decentralized, and federated video platform powered by ActivityPub and WebTorrent.",
+        "url": "https://joinpeertube.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Decentralized P2P streaming",
+          "Federated search via ActivityPub",
+          "Custom video players",
+          "No advertisements"
+        ],
+        "pros": [
+          "Uses peer-to-peer web browser technology to save bandwidth",
+          "No central authority can censor your videos",
+          "Can be self-hosted easily"
+        ],
+        "cons": [
+          "P2P streaming quality depends on viewers' upload speeds",
+          "Lacks advanced enterprise video analytics dashboards"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "newrelic",
+    "name": "New Relic",
+    "category": "Hosting & DevOps",
+    "whySwitch": "New Relic's pricing model is user-based and data-ingest based, making it highly unpredictable and costly for growing engineering teams. Open-source application performance monitoring (APM) suites let you query metrics and traces.",
+    "alternatives": [
+      {
+        "name": "OpenObserve",
+        "description": "Cloud-native observability platform built for logs, metrics, traces, and profiling. Written in Rust.",
+        "url": "https://openobserve.ai",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Logs, metrics, and traces dashboard",
+          "SQL-based querying",
+          "High-efficiency storage (saves 90% space)",
+          "Built-in alerting"
+        ],
+        "pros": [
+          "Extremely lightweight compared to Elasticsearch/Datadog",
+          "Written in Rust; very high performance",
+          "100% OpenTelemetry compatible"
+        ],
+        "cons": [
+          "Newer project with rapidly changing APIs",
+          "Lacks some legacy database integration plugins"
+        ]
+      },
+      {
+        "name": "HyperDX",
+        "description": "Open-source observability platform that helps developers resolve production issues faster. Replaces Datadog/New Relic.",
+        "url": "https://www.hyperdx.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Correlate logs and traces",
+          "Session replay integrations",
+          "Alerting via Slack/PagerDuty",
+          "ClickHouse backend"
+        ],
+        "pros": [
+          "Beautiful dashboard interface",
+          "Correlates browser sessions directly with server backend logs",
+          "Easy to deploy on Docker Compose"
+        ],
+        "cons": [
+          "Requires ClickHouse database, which needs memory tuning",
+          "Active development, documentation is still growing"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "grafana-cloud",
+    "name": "Grafana Cloud",
+    "category": "Hosting & DevOps",
+    "whySwitch": "Grafana Cloud charges high fees once you scale past their free logs and metrics ingestion limits. Running self-hosted Grafana instances allows you to visualize your databases without data ingestion limits.",
+    "alternatives": [
+      {
+        "name": "Grafana OSS",
+        "description": "The open-source visualization and analytics software. Create dashboards for your databases.",
+        "url": "https://grafana.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Rich dashboard panels",
+          "Dozens of data sources (SQL, Prometheus)",
+          "Alerting engine",
+          "Custom plugins"
+        ],
+        "pros": [
+          "Industry standard visualization dashboard",
+          "Completely free with no limits on panels or users",
+          "Massive community templates library"
+        ],
+        "cons": [
+          "Requires manually setting up and securing the hosting instance",
+          "You must configure backups for dashboard settings"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "logrocket",
+    "name": "LogRocket",
+    "category": "Analytics",
+    "whySwitch": "LogRocket charges monthly fees based on session counts, making it very expensive for high-traffic web applications. Open-source session replay and debugging tools let you record user sessions and inspect network logs.",
+    "alternatives": [
+      {
+        "name": "OpenReplay",
+        "description": "Open-source session replay suite for developers. Self-host for absolute privacy.",
+        "url": "https://openreplay.com",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Session recordings",
+          "DevTools console logs tracking",
+          "Network requests inspection",
+          "Redux/Vuex state logging"
+        ],
+        "pros": [
+          "Incredibly detailed session replay with dev console logging",
+          "GDPR compliance since recordings are hosted on your server",
+          "Excellent speed"
+        ],
+        "cons": [
+          "Self-hosting requires Kubernetes (k3s) which is resource-heavy",
+          "Cloud version has limits on free tier"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "basecamp",
+    "name": "Basecamp",
+    "category": "Project Management",
+    "whySwitch": "Basecamp has a strictly structured layout that might not adapt to agile/software workflows. Open-source team spaces provide boards, chats, document repositories, and checklists in a unified dashboard.",
+    "alternatives": [
+      {
+        "name": "Twake",
+        "description": "Open-source collaborative workspace. Replaces Slack, Nextcloud, and Basecamp in one tool.",
+        "url": "https://twake.app",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "File manager",
+          "Team chat",
+          "Task board (Kanban)",
+          "Shared calendars"
+        ],
+        "pros": [
+          "All-in-one productivity hub",
+          "Clean and simple modern user interface",
+          "Excellent file sharing"
+        ],
+        "cons": [
+          "Mobile app sync can sometimes lag",
+          "Smaller plugin marketplace"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "audacity",
+    "name": "Audacity",
+    "category": "Design & Creative",
+    "whySwitch": "Audacity's acquisition by Muse Group led to telemetry and privacy policy disputes. Forked open-source audio editors offer the same rich multi-track wave manipulation features with zero data tracking.",
+    "alternatives": [
+      {
+        "name": "Tenacity",
+        "description": "A privacy-focused, community-led fork of the Audacity audio editor.",
+        "url": "https://github.com/tenacityteam/tenacity",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Multi-track audio editing",
+          "Vocal removal & noise reduction",
+          "Spectrogram analysis",
+          "VST/LADSPA plugin support"
+        ],
+        "pros": [
+          "100% offline and telemetry-free",
+          "Maintains classic Audacity layout and keybindings",
+          "Very lightweight"
+        ],
+        "cons": [
+          "Ecosystem is split between different forks",
+          "Fewer automated update alerts"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "acuity",
+    "name": "Acuity Scheduling",
+    "category": "Scheduling",
+    "whySwitch": "Acuity Scheduling limits customize options and charges monthly fees to integrate with payment processors. Open-source appointment booking libraries let you build custom workflows and keep payment integration fee-free.",
+    "alternatives": [
+      {
+        "name": "Cal.com Scheduling",
+        "description": "The developer-first scheduling infrastructure. Open-source and highly extensible.",
+        "url": "https://cal.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Self-hosted booking",
+          "API and webhooks",
+          "Stripe payment integration",
+          "White-label support"
+        ],
+        "pros": [
+          "Beautiful, responsive booking layouts",
+          "Completely free when self-hosted",
+          "Extensive customization"
+        ],
+        "cons": [
+          "Requires basic technical knowledge to deploy on own server",
+          "Paid plans required for cloud multi-user teams"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "surveymonkey",
+    "name": "SurveyMonkey",
+    "category": "Forms & Surveys",
+    "whySwitch": "SurveyMonkey limits response collection and page customization on basic tiers. Open-source survey builders offer unlimited questions, responses, logic branching, and data export features for free.",
+    "alternatives": [
+      {
+        "name": "LimeSurvey",
+        "description": "The leading open-source online survey application. Highly advanced logic branching.",
+        "url": "https://www.limesurvey.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Unlimited surveys and questions",
+          "Advanced conditional logic",
+          "Participant management",
+          "Dozens of question types"
+        ],
+        "pros": [
+          "Most powerful survey logic configuration available",
+          "Excellent analytics export options",
+          "Can be self-hosted on basic PHP servers"
+        ],
+        "cons": [
+          "UI feels dated and corporate",
+          "Steep learning curve to configure complex paths"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "rebrandly",
+    "name": "Rebrandly",
+    "category": "Marketing",
+    "whySwitch": "Rebrandly charges monthly subscription fees for custom short domains and links tracking. Open-source URL shortening libraries let you deploy link managers on edge networks with detailed visitor charts.",
+    "alternatives": [
+      {
+        "name": "Kutt",
+        "description": "Modern open-source URL shortener with statistics and custom domain support.",
+        "url": "https://kutt.it",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Custom domains support",
+          "Detailed analytics (geography, browser)",
+          "API access with keys",
+          "Chrome/Firefox extensions"
+        ],
+        "pros": [
+          "Sleek and minimalist dashboard UI",
+          "Written in Node/React; very fast",
+          "Easy to run on Docker"
+        ],
+        "cons": [
+          "Project development has slowed down slightly",
+          "Fewer QR code customization styles"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tealium",
+    "name": "Tealium",
+    "category": "Analytics",
+    "whySwitch": "Tealium is an enterprise customer data platform with opaque pricing and complex setups. Open-source event analytics libraries let you capture events from browsers and route them to multiple data stores securely.",
+    "alternatives": [
+      {
+        "name": "Jitsu",
+        "description": "The open-source alternative to Segment and Tealium. High-performance data ingestion.",
+        "url": "https://jitsu.com",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Real-time event streaming",
+          "Automatic schema management",
+          "Connects to BigQuery, Snowflake, ClickHouse",
+          "Adblock bypass integrations"
+        ],
+        "pros": [
+          "Extremely high event throughput",
+          "Saves raw JSON event data directly to your SQL databases",
+          "Modern and polished cloud console UI"
+        ],
+        "cons": [
+          "Requires Kubernetes to self-host for high availability",
+          "Smaller library of destinations than Segment"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "rollbar",
+    "name": "Rollbar",
+    "category": "Error Tracking",
+    "whySwitch": "Rollbar is proprietary and scales subscription pricing based on event logs volume. Open-source error logging systems let you aggregate client exceptions and receive Slack alerts for free.",
+    "alternatives": [
+      {
+        "name": "Errbit",
+        "description": "The self-hosted error catcher that is Airbrake API compatible. Written in Ruby.",
+        "url": "https://errbit.github.io/errbit/",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Airbrake API compatible",
+          "Aggregated error views",
+          "Slack/Email alerts",
+          "MongoDB storage"
+        ],
+        "pros": [
+          "Simple and lightweight",
+          "Uses the mature Airbrake client SDK ecosystem",
+          "Easy to deploy on Docker/Heroku"
+        ],
+        "cons": [
+          "Ruby on Rails codebase requires basic admin knowledge",
+          "Fewer performance monitoring features than Sentry"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "drift",
+    "name": "Drift",
+    "category": "Customer Support",
+    "whySwitch": "Drift charges high fees for interactive chat triggers and contact collection. Open-source conversational widgets let you connect to website visitors and route messages to unified slack-like dashboards.",
+    "alternatives": [
+      {
+        "name": "Chaskiq",
+        "description": "Open source conversational marketing platform. Replaces Intercom and Drift.",
+        "url": "https://chaskiq.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Omnichannel web widget",
+          "Visual bot builder",
+          "Campaign sequences",
+          "CRM integration"
+        ],
+        "pros": [
+          "Extremely robust features (resembles Intercom/Drift)",
+          "Completely open source with no artificial feature blocks",
+          "Rich plugins system"
+        ],
+        "cons": [
+          "Complex installation (requires Ruby on Rails and React setup)",
+          "High RAM requirements to run background jobs"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "octopus",
+    "name": "Octopus Deploy",
+    "category": "Hosting & DevOps",
+    "whySwitch": "Octopus Deploy has proprietary licensing fees for server nodes and targets. Open-source deployment automation engines orchestrate builds and container updates without licensing limits.",
+    "alternatives": [
+      {
+        "name": "GoCD",
+        "description": "Open-source continuous delivery server specializing in pipeline visualization and modeling.",
+        "url": "https://www.gocd.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Value stream mapping",
+          "Advanced pipeline dependencies",
+          "Cloud-native deployments support",
+          "Granular user permissions"
+        ],
+        "pros": [
+          "Excellent for complex multi-stage release pipelines",
+          "Built-in audit trails and security dashboards",
+          "Completely open source"
+        ],
+        "cons": [
+          "Steep learning curve to model pipelines",
+          "UI can feel slightly complex and technical"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "splunk",
+    "name": "Splunk",
+    "category": "Hosting & DevOps",
+    "whySwitch": "Splunk is famously expensive, charging based on daily data indexing volume. Open-source log analysis suites let you aggregate terabytes of log data, run SQL searches, and monitor server stats.",
+    "alternatives": [
+      {
+        "name": "Graylog",
+        "description": "Enterprise-grade open-source log management. Fast, reliable, and scalable.",
+        "url": "https://www.graylog.org",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Centralized log collector",
+          "Fast search queries",
+          "Custom dashboard metrics",
+          "Alert rules and integrations"
+        ],
+        "pros": [
+          "Extremely fast querying on millions of log rows",
+          "Beautiful charts builder",
+          "Active developer forum and community"
+        ],
+        "cons": [
+          "Requires Elasticsearch and MongoDB, which are memory-heavy",
+          "Some advanced authentication rules are locked behind paid enterprise plans"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "category": "Email Marketing",
+    "whySwitch": "Klaviyo is highly expensive for e-commerce stores with active customer lists and charges transaction rates. Open-source e-commerce newsletters integrate directly with WooCommerce or Shopify and send via SMTP.",
+    "alternatives": [
+      {
+        "name": "Mailcoach",
+        "description": "Self-hosted email newsletter engine. Replaces Klaviyo and Mailchimp.",
+        "url": "https://spatie.be/products/mailcoach",
+        "pricing": "Paid Self-hosted / Open Source",
+        "features": [
+          "E-commerce list segments",
+          "Automated email drip campaigns",
+          "Transactional email logs",
+          "Stunning campaign designer"
+        ],
+        "pros": [
+          "Integrates seamlessly with Laravel apps",
+          "Extremely clean and modern codebase",
+          "No limits on subscribers"
+        ],
+        "cons": [
+          "Self-hosted version requires a one-time license fee (though very affordable)",
+          "No built-in SMTP (requires connecting to Amazon SES or Postmark)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "crowdcast",
+    "name": "Crowdcast",
+    "category": "Media & Entertainment",
+    "whySwitch": "Crowdcast has strict event limits, charges monthly subscription rates, and takes transaction fees for paid webinars. Open-source streaming libraries let you broadcast to web viewers directly from OBS Studio.",
+    "alternatives": [
+      {
+        "name": "Owncast",
+        "description": "Self-hosted, open-source live video streaming server. A Crowdcast and Twitch alternative.",
+        "url": "https://owncast.online",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Direct RTMP/WHIP ingestion",
+          "Built-in interactive chat",
+          "Custom branding & overlays",
+          "S3 video storage integrations"
+        ],
+        "pros": [
+          "You keep 100% control over your stream and viewers",
+          "Incredibly easy to run (single Go binary)",
+          "Chat runs on your own server with moderation"
+        ],
+        "cons": [
+          "Hosting a stream with thousands of viewers requires significant bandwidth",
+          "Lacks built-in multi-host split-screen webinars"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "smartsuite",
+    "name": "SmartSuite",
+    "category": "Databases & Spreadsheets",
+    "whySwitch": "SmartSuite limits record counts, automations, and dashboards on free tiers. Open-source relational spreadsheets let you construct customized database schemas and host them locally.",
+    "alternatives": [
+      {
+        "name": "Baserow Relational",
+        "description": "Open-source relational database tool. Replaces Airtable and SmartSuite.",
+        "url": "https://baserow.io",
+        "pricing": "Free / Premium Paid",
+        "features": [
+          "Relational schemas",
+          "Grid & Kanban views",
+          "Custom API builder",
+          "Self-hosting support"
+        ],
+        "pros": [
+          "Polished interface similar to Airtable",
+          "Excellent REST API and developer tools",
+          "Very active development"
+        ],
+        "cons": [
+          "Some advanced database views require premium license",
+          "Requires technical Docker compose setup"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "box",
+    "name": "Box",
+    "category": "Workspace & Notes",
+    "whySwitch": "Box has high subscription costs per seat and restricts custom storage APIs on entry levels. Open-source workspace portals let you store, sync, and collaborate on files without seat taxes.",
+    "alternatives": [
+      {
+        "name": "Nextcloud Workspace",
+        "description": "Enterprise-grade self-hosted collaboration platform. Replaces Box and Microsoft 365.",
+        "url": "https://nextcloud.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "File sync & sharing",
+          "Collaborative documents editing",
+          "Calendar & mail integration",
+          "LDAP/Active Directory sync"
+        ],
+        "pros": [
+          "Extremely secure with HIPAA-ready plugins",
+          "Massive market of official addon integrations",
+          "Supports full office document editing"
+        ],
+        "cons": [
+          "Resource requirements can scale fast for large organizations",
+          "Upgrades require careful database backups"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "invision",
+    "name": "InVision",
+    "category": "Design & Creative",
+    "whySwitch": "InVision was shut down and its services deprecated. Open-source prototyping and design tools offer clean vector canvases and collaborative preview links for free.",
+    "alternatives": [
+      {
+        "name": "Penpot Design",
+        "description": "The open-source vector design and interactive prototyping workspace.",
+        "url": "https://penpot.app",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Interactive prototyping",
+          "Shared team workspace",
+          "SVG native export",
+          "Comments and reviews"
+        ],
+        "pros": [
+          "Runs entirely in modern web browsers",
+          "Unlimited pages, files, and users",
+          "Beautiful developer mode inspect layouts"
+        ],
+        "cons": [
+          "Ecosystem of pre-made component libraries is still growing",
+          "No native desktop offline app"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "indesign",
+    "name": "Adobe InDesign",
+    "category": "Design & Creative",
+    "whySwitch": "Adobe InDesign is locked behind expensive Creative Cloud plans. Open-source desktop publishing applications let you lay out books, magazines, and marketing brochures without licensing constraints.",
+    "alternatives": [
+      {
+        "name": "Scribus",
+        "description": "Open-source desktop publishing. Professional layout, typesetting, and print preparation.",
+        "url": "https://www.scribus.net",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Professional page layout",
+          "CMYK color support",
+          "PDF/X-3 export engine",
+          "Vector drawing tools"
+        ],
+        "pros": [
+          "Fully compliant print output formatting",
+          "Available for Windows, macOS, Linux",
+          "No licensing limits"
+        ],
+        "cons": [
+          "Interface resembles older legacy graphics editors",
+          "Slightly dated typography rendering compared to InDesign"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "autocad",
+    "name": "Autodesk AutoCAD",
+    "category": "Design & Creative",
+    "whySwitch": "AutoCAD subscriptions cost thousands of dollars per seat annually. Open-source CAD software lets engineers and modelers design 2D drafting and 3D modeling files for free.",
+    "alternatives": [
+      {
+        "name": "FreeCAD",
+        "description": "A multiplatform open-source parametric 3D modeler.",
+        "url": "https://www.freecad.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Parametric 3D modeling",
+          "2D drafting tools",
+          "Finite Element Analysis (FEA)",
+          "Robot simulation"
+        ],
+        "pros": [
+          "Highly advanced engineering features",
+          "Completely open source with a modular structure",
+          "Python scripting console built-in"
+        ],
+        "cons": [
+          "UI takes significant time to master",
+          "Fewer native DWG file export tools"
+        ]
+      },
+      {
+        "name": "LibreCAD",
+        "description": "A fully-featured 2D CAD application. Free and open source.",
+        "url": "https://librecad.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "2D drafting tools",
+          "DXF file format compliance",
+          "Highly lightweight footprint",
+          "Multi-language translations"
+        ],
+        "pros": [
+          "Extremely fast on older computers",
+          "Perfect for basic 2D floor plans and mechanical drawings",
+          "Simple UI"
+        ],
+        "cons": [
+          "Strictly limited to 2D drawings (no 3D capabilities)",
+          "Lacks AutoCAD dynamic blocks feature"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "circleci",
+    "name": "CircleCI",
+    "category": "Hosting & DevOps",
+    "whySwitch": "CircleCI limits concurrent runtimes and credits on free tiers, making CI pipelines expensive for active code repositories. Open-source runners execute builds on your own local machines.",
+    "alternatives": [
+      {
+        "name": "Woodpecker CI",
+        "description": "A community-run fork of Drone CI. Lightweight and container-first.",
+        "url": "https://woodpecker-ci.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Container-based pipelines",
+          "Simple YAML configuration",
+          "Multi-architecture runners",
+          "Git integrations"
+        ],
+        "pros": [
+          "Extremely lightweight deployment",
+          "Easy to configure with standard Docker pipelines",
+          "Active community maintenance"
+        ],
+        "cons": [
+          "Fewer enterprise dashboard charts",
+          "Setting up custom runners requires manual server setup"
         ]
       }
     ]
