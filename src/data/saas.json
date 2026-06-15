@@ -789,5 +789,329 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "github",
+    "name": "GitHub",
+    "category": "Hosting & DevOps",
+    "whySwitch": "GitHub is owned by Microsoft and has transitioned toward closed, proprietary features. Self-hosting your Git repositories using open-source platforms ensures complete privacy of your intellectual property and bypasses per-seat subscription constraints.",
+    "alternatives": [
+      {
+        "name": "GitLab",
+        "description": "A complete DevOps platform, available as self-hosted open-source software.",
+        "url": "https://about.gitlab.com",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Integrated CI/CD pipelines",
+          "Issue boards",
+          "Container registry",
+          "Security scanning"
+        ],
+        "pros": [
+          "All-in-one DevOps suite",
+          "Excellent enterprise user controls",
+          "Highly mature ecosystem"
+        ],
+        "cons": [
+          "Resource-heavy to self-host",
+          "Complex configuration for small teams"
+        ]
+      },
+      {
+        "name": "Gitea",
+        "description": "A painless self-hosted Git service written in Go. Extremely lightweight and fast.",
+        "url": "https://gitea.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Lightweight architecture",
+          "Low system requirements",
+          "Git LFS support",
+          "Database support (SQLite, PostgreSQL, MySQL)"
+        ],
+        "pros": [
+          "Very low RAM usage",
+          "Single Go binary setup is extremely simple",
+          "Responsive, clean UI similar to GitHub"
+        ],
+        "cons": [
+          "Fewer built-in project management tools than GitLab",
+          "Lacks native CI/CD (requires pairing with Woodpecker or Act Runner)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "figma",
+    "name": "Figma",
+    "category": "Design & Creative",
+    "whySwitch": "Figma's licensing fees have increased, and it locks your designs into a proprietary cloud. Switching to open-source collaborative design platforms gives you absolute data ownership, self-hosting capability, and standard vector export formats without subscription limits.",
+    "alternatives": [
+      {
+        "name": "Penpot",
+        "description": "The first open-source, collaborative design tool for design and code teams. Uses SVG natively.",
+        "url": "https://penpot.app",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Native SVG file format",
+          "CSS Grid layouts",
+          "Real-time collaboration",
+          "Self-hostable via Docker"
+        ],
+        "pros": [
+          "Works directly in browser",
+          "Design system components are highly customizable",
+          "No subscription limit on team size"
+        ],
+        "cons": [
+          "Smaller plugin ecosystem compared to Figma",
+          "Performance can lag on extremely complex multi-page files"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "jira",
+    "name": "Jira",
+    "category": "Project Management",
+    "whySwitch": "Jira is notoriously slow, complex, and expensive. Open-source agile management tools offer faster UI responses, simpler workflows, and don't limit team sizes or feature access.",
+    "alternatives": [
+      {
+        "name": "OpenProject",
+        "description": "Open-source project management software with agile, classic, and hybrid workflows.",
+        "url": "https://www.openproject.org",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Gantt charts",
+          "Agile boards",
+          "Time tracking",
+          "Product roadmaps"
+        ],
+        "pros": [
+          "Highly secure and GDPR compliant",
+          "Robust feature set for enterprise teams",
+          "Excellent classical project tracking"
+        ],
+        "cons": [
+          "UI feels slightly corporate and complex",
+          "SAML/SSO requires enterprise tier"
+        ]
+      },
+      {
+        "name": "Taiga",
+        "description": "A beautiful open-source project management tool for multi-functional teams using Scrum and Kanban.",
+        "url": "https://taiga.io",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Scrum & Kanban boards",
+          "Backlog management",
+          "Epics & user stories",
+          "Custom fields"
+        ],
+        "pros": [
+          "Visually appealing and intuitive UI",
+          "Excellent Scrum implementation",
+          "Extremely easy to adopt for non-technical members"
+        ],
+        "cons": [
+          "Not ideal for classical/waterfall project management",
+          "Fewer enterprise-level integrations"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "intercom",
+    "name": "Intercom",
+    "category": "Sales & CRM",
+    "whySwitch": "Intercom charges based on your active customer volume, resulting in massive monthly bills for consumer-facing apps. Open-source customer communication suites allow you to talk to millions of users without paying a per-contact tax.",
+    "alternatives": [
+      {
+        "name": "Chatwoot",
+        "description": "Open-source customer engagement platform. An alternative to Intercom, Zendesk, and Salesforce Service Cloud.",
+        "url": "https://www.chatwoot.com",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Shared team inbox",
+          "Live chat widget",
+          "Omnichannel (Email, WhatsApp, FB, Twitter)",
+          "Automation rules"
+        ],
+        "pros": [
+          "Beautiful, modern React UI",
+          "Excellent mobile app support",
+          "Self-hostable in minutes via Docker"
+        ],
+        "cons": [
+          "Premium reports are limited on the free tier",
+          "Some third-party channel integrations require paid API keys"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dropbox",
+    "name": "Dropbox",
+    "category": "Workspace & Notes",
+    "whySwitch": "Dropbox provides minimal storage for free and scanning of your files. Self-hosting your file storage using open-source tools ensures absolute privacy and allows you to use your own hard drives with no storage quotas.",
+    "alternatives": [
+      {
+        "name": "Nextcloud",
+        "description": "A safe home for all your data. Community-driven self-hosted productivity suite.",
+        "url": "https://nextcloud.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "File sync and share",
+          "Collaborative document editing",
+          "Calendar & contacts integration",
+          "End-to-end encryption"
+        ],
+        "pros": [
+          "Complete suite (replaces Dropbox, Google Calendar, and Office)",
+          "Massive plugin/app marketplace",
+          "Strong mobile apps"
+        ],
+        "cons": [
+          "Can be slow on cheap VPS servers",
+          "Requires maintenance to keep database and PHP optimized"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "1password",
+    "name": "1Password",
+    "category": "Security",
+    "whySwitch": "1Password transitioned to a proprietary cloud-only model. Self-hosting your password manager using open-source software guarantees that your encrypted credentials are saved in your own secure vault, and not on a third-party server.",
+    "alternatives": [
+      {
+        "name": "Bitwarden",
+        "description": "The open-source password manager trusted by millions. Safe, secure, and easy to self-host.",
+        "url": "https://bitwarden.com",
+        "pricing": "Free / Premium Paid",
+        "features": [
+          "Cross-platform sync",
+          "Shared organization vaults",
+          "Biometric unlock",
+          "Password generator"
+        ],
+        "pros": [
+          "Fully audited open-source code",
+          "Extremely polished clients for iOS, Android, Chrome, Mac, Windows",
+          "Can be self-hosted with Vaultwarden (lightweight Rust rewrite)"
+        ],
+        "cons": [
+          "Directory sync requires premium tier",
+          "Free tier organization is limited to 2 users"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "trello",
+    "name": "Trello",
+    "category": "Project Management",
+    "whySwitch": "Trello's free tier has become heavily restricted, and integration limits make it hard to automate workflows. Open-source Kanban boards give you unlimited cards, boards, and automations.",
+    "alternatives": [
+      {
+        "name": "Planka",
+        "description": "An elegant open-source Kanban board built with React and Redux. Extremely clean and fast.",
+        "url": "https://planka.app",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Real-time updates",
+          "Markdown descriptions",
+          "Custom attachments",
+          "Member assignments"
+        ],
+        "pros": [
+          "Beautiful, modern design",
+          "Extremely fast loading speed",
+          "Very easy to host with Docker Compose"
+        ],
+        "cons": [
+          "Fewer complex plugins than Trello",
+          "No native mobile apps yet (mobile web view is responsive)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "discord",
+    "name": "Discord",
+    "category": "Team Communication",
+    "whySwitch": "Discord scans your conversations, restricts file sizes, and is built on a proprietary model. Moving your community to open-source chat systems guarantees data privacy, custom skins, and unlimited file upload limits on your own servers.",
+    "alternatives": [
+      {
+        "name": "Matrix",
+        "description": "An open standard for secure, decentralized, real-time communication.",
+        "url": "https://matrix.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Decentralized architecture",
+          "End-to-end encryption",
+          "Voice & video bridging",
+          "Rich bots and widgets"
+        ],
+        "pros": [
+          "No single point of failure",
+          "Can bridge messages directly to Slack, Discord, and Telegram",
+          "Strong developer focus"
+        ],
+        "cons": [
+          "Slightly complex setup for standard users",
+          "Element client has a learning curve"
+        ]
+      },
+      {
+        "name": "Revolt",
+        "description": "A user-friendly, privacy-focused open-source chat platform designed as a drop-in replacement for Discord.",
+        "url": "https://revolt.chat",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Servers and channels",
+          "User profiles & bots",
+          "Theme builder",
+          "Voice servers"
+        ],
+        "pros": [
+          "Nearly identical look and feel to Discord",
+          "Extremely clean UI",
+          "No paywalls for core features"
+        ],
+        "cons": [
+          "Community is still relatively small",
+          "Voice chat requires additional server configuration to host"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "evernote",
+    "name": "Evernote",
+    "category": "Workspace & Notes",
+    "whySwitch": "Evernote's free tier has restricted users to a maximum of 50 notes, forcing them to upgrade to expensive subscription plans. Open-source markdown notebooks let you sync infinite notes via WebDAV, Dropbox, or self-hosted systems.",
+    "alternatives": [
+      {
+        "name": "Joplin",
+        "description": "An open-source note-taking and to-do application with synchronization capabilities.",
+        "url": "https://joplinapp.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Markdown format",
+          "End-to-end encryption",
+          "Firefox/Chrome web clipper",
+          "To-do management"
+        ],
+        "pros": [
+          "Synchronizes with Nextcloud, Dropbox, OneDrive, or WebDAV",
+          "Very mature desktop and mobile applications",
+          "Supports tags, search, and plugins"
+        ],
+        "cons": [
+          "UI is functional but not as modern as Notion",
+          "Collaborative editing is not native out-of-the-box"
+        ]
+      }
+    ]
   }
 ]
