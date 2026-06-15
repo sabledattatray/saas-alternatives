@@ -1437,5 +1437,316 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "google-drive",
+    "name": "Google Drive",
+    "category": "Workspace & Notes",
+    "whySwitch": "Google Drive scans your documents, images, and folders for data profiles. Switching to open-source self-hosted storage suites grants absolute control over your private files and infinite storage capacity on your own local hard drives.",
+    "alternatives": [
+      {
+        "name": "Nextcloud Files",
+        "description": "The self-hosted productivity platform that keeps you in control of your documents and files.",
+        "url": "https://nextcloud.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "File sharing and syncing",
+          "Collaborative document editing",
+          "Automated mobile photo uploads",
+          "Access control & encryption"
+        ],
+        "pros": [
+          "Fully featured alternative to Google Workspace",
+          "Includes calendar, chat, and office tools",
+          "Strong desktop and mobile sync clients"
+        ],
+        "cons": [
+          "Requires significant RAM and CPU to run smoothly for large teams",
+          "Can be complex to install and keep updated"
+        ]
+      },
+      {
+        "name": "Owncloud",
+        "description": "Secure file sharing and collaboration platform. Lightweight and highly secure.",
+        "url": "https://owncloud.com",
+        "pricing": "Free / Open Source",
+        "features": [
+          "File sharing",
+          "Activity stream",
+          "Multi-factor authentication",
+          "Virtual file system"
+        ],
+        "pros": [
+          "Highly stable and focused strictly on files",
+          "Excellent performance on standard hardware",
+          "Enterprise compliance ready"
+        ],
+        "cons": [
+          "Fewer default plugins/collaboration apps than Nextcloud",
+          "Mobile apps are sometimes premium"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "sendgrid",
+    "name": "SendGrid",
+    "category": "Email Marketing",
+    "whySwitch": "SendGrid has increased pricing and strict account limits. Self-hosting your transaction and marketing mail servers allows you to send millions of emails at the raw cost of server bandwidth without per-message platform charges.",
+    "alternatives": [
+      {
+        "name": "Postal",
+        "description": "A fully featured, open-source mail delivery platform for sending and receiving emails. A SendGrid and Mailgun alternative.",
+        "url": "https://github.com/postalserver/postal",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Fast email delivery queue",
+          "Incoming and outgoing mail handling",
+          "Click and open tracking",
+          "Rich developer API and webhooks"
+        ],
+        "pros": [
+          "Full control over your IP reputation",
+          "Beautiful admin UI similar to Mailgun/SendGrid",
+          "Handles high volumes of mail easily"
+        ],
+        "cons": [
+          "Requires strict DNS configuration (DKIM, SPF, DMARC)",
+          "You are responsible for managing IP delivery and blacklists"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "jira-service-desk",
+    "name": "Jira Service Desk",
+    "category": "Customer Support",
+    "whySwitch": "Jira Service Desk charges expensive license fees per agent, making customer support costly for growing startups. Open-source ticket and helpdesk systems offer unlimited agents, custom workflows, and full data sovereignty.",
+    "alternatives": [
+      {
+        "name": "Zammad",
+        "description": "A web-based, open-source user support/helpdesk system. Compatible with email, chat, and social channels.",
+        "url": "https://zammad.org",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Omnichannel ticket management",
+          "Knowledge base builder",
+          "Automated SLAs & escalation",
+          "Custom customer portals"
+        ],
+        "pros": [
+          "Beautiful, modern customer support interface",
+          "Integrates email, Twitter, Facebook, and chat in one inbox",
+          "Completely free with unlimited agents when self-hosted"
+        ],
+        "cons": [
+          "Setting up channels can take some technical configuration",
+          "Elasticsearch is required for fast search, which uses high memory"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "microsoft-teams",
+    "name": "Microsoft Teams",
+    "category": "Team Communication",
+    "whySwitch": "Microsoft Teams is heavy, resource-intensive, and locks your enterprise chats into Microsoft's closed cloud. Open-source workspace chat systems run faster, consume less RAM, and keep all internal discussions strictly confidential.",
+    "alternatives": [
+      {
+        "name": "Mattermost",
+        "description": "Open-source enterprise-grade communication hub for developers and operations teams.",
+        "url": "https://mattermost.com",
+        "pricing": "Free / Enterprise Paid",
+        "features": [
+          "Strict data privacy and encryption",
+          "DevOps integrations (GitLab, Jira, GitHub)",
+          "Threaded messaging & file sharing",
+          "Incident collaboration playbooks"
+        ],
+        "pros": [
+          "Excellent for technical teams and developer communication",
+          "Direct Slack-like interface that requires no training",
+          "Self-hostable within your own VPN"
+        ],
+        "cons": [
+          "Enterprise features (like SAML/SSO) require expensive licenses",
+          "Mobile notifications setup requires compiling custom apps or using push proxy"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "premiere",
+    "name": "Adobe Premiere",
+    "category": "Design & Creative",
+    "whySwitch": "Adobe's subscription pricing locks creators into a lifetime payment loop. Open-source video editors offer non-linear multi-track editing, effects, and timeline adjustments without licensing fees.",
+    "alternatives": [
+      {
+        "name": "Kdenlive",
+        "description": "A powerful open-source non-linear video editor based on the MLT Framework and KDE.",
+        "url": "https://kdenlive.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Multi-track video and audio editing",
+          "Dozens of built-in transitions and effects",
+          "Automatic backup backups",
+          "Proxy editing for lightweight processing"
+        ],
+        "pros": [
+          "Extremely feature-rich (4K editing, keyframes, title editor)",
+          "Highly stable and actively updated",
+          "Runs on Linux, Windows, and macOS"
+        ],
+        "cons": [
+          "Interface can feel cluttered to beginners",
+          "Rendering times can be slower than commercial alternatives without GPU tuning"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "illustrator",
+    "name": "Adobe Illustrator",
+    "category": "Design & Creative",
+    "whySwitch": "Illustrator is expensive and uses proprietary file formats. Open-source vector design software uses standard formats like SVG, ensuring that your raw artwork is future-proof and compatible with all web standards.",
+    "alternatives": [
+      {
+        "name": "Inkscape",
+        "description": "Professional vector graphics editor. Draw freely and save files in native SVG.",
+        "url": "https://inkscape.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Flexible drawing tools",
+          "Native SVG support",
+          "Bezier curves and spin paths",
+          "Text-on-path tool"
+        ],
+        "pros": [
+          "Extremely powerful vector engine",
+          "No licensing fees; 100% open source",
+          "Great documentation and learning tutorials"
+        ],
+        "cons": [
+          "UI and hotkeys are different from Adobe's, requiring relearning",
+          "Performance can slow down with complex gradient meshes"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "squarespace",
+    "name": "Squarespace",
+    "category": "Design & Creative",
+    "whySwitch": "Squarespace charges high subscription fees and transaction cuts to host simple websites. Open-source site builders and content management tools give you full access to the code and let you host on cheap servers for a fraction of the price.",
+    "alternatives": [
+      {
+        "name": "Ghost",
+        "description": "The professional publishing platform for newsletters, blogs, and subscription sites.",
+        "url": "https://ghost.org",
+        "pricing": "Free / Cloud Paid",
+        "features": [
+          "Beautiful built-in publishing editor",
+          "Built-in email newsletters",
+          "Membership paid subscriptions",
+          "SEO optimization out-of-the-box"
+        ],
+        "pros": [
+          "Stunning, modern design templates",
+          "Extremely fast Node.js architecture",
+          "100% free if you self-host on a $5 VPS"
+        ],
+        "cons": [
+          "More focused on publishing and blogs than general landing pages",
+          "Requires command-line access to install and maintain self-hosted"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "medium",
+    "name": "Medium",
+    "category": "Workspace & Notes",
+    "whySwitch": "Medium locks articles behind a paywall and restricts your branding. Self-hosting your publications using open-source platforms lets you own your audience, build direct email lists, and keep 100% of your subscription revenue.",
+    "alternatives": [
+      {
+        "name": "WriteFreely",
+        "description": "A clean, minimalist publishing platform for writers. Connects to the fediverse (ActivityPub).",
+        "url": "https://writefreely.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Minimalist distraction-free editor",
+          "Decentralized ActivityPub networking",
+          "Multiple blogs per account",
+          "Custom CSS support"
+        ],
+        "pros": [
+          "Incredibly lightweight and fast",
+          "Allows readers to follow your blog from Mastodon",
+          "No ads or tracking scripts"
+        ],
+        "cons": [
+          "Lacks advanced layout customization natively",
+          "Very simplistic; no built-in newsletter email sending"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "google-maps",
+    "name": "Google Maps",
+    "category": "Maps & Location",
+    "whySwitch": "Google Maps API keys charge high usage fees for sites and apps. Switching to collaborative, open map platforms offers free data access and protects your visitors' location privacy.",
+    "alternatives": [
+      {
+        "name": "OpenStreetMap",
+        "description": "A collaborative project to create a free editable map of the world.",
+        "url": "https://www.openstreetmap.org",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Community-driven map data",
+          "Routing and geocoding",
+          "Custom tile servers",
+          "Global coverage"
+        ],
+        "pros": [
+          "Entirely free map data under ODbL license",
+          "Huge community of contributors keeping data accurate",
+          "No tracking of user location"
+        ],
+        "cons": [
+          "Rendering styles are not as visually polished out-of-the-box as Google Maps",
+          "Search (Nominatim) can sometimes be less intelligent with typos"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "google-forms",
+    "name": "Google Forms",
+    "category": "Forms & Surveys",
+    "whySwitch": "Google Forms has a dated design and harvests respondent data. Open-source form tools offer beautiful modern interfaces, direct database storage, and complete privacy for user responses.",
+    "alternatives": [
+      {
+        "name": "Tally",
+        "description": "The simplest way to create forms. Write like a document, and get beautiful forms for free.",
+        "url": "https://tally.so",
+        "pricing": "Free / Premium Paid",
+        "features": [
+          "Notion-like keyboard shortcuts",
+          "Unlimited forms & responses",
+          "Payment collection integration",
+          "Conditional logic & calculations"
+        ],
+        "pros": [
+          "Most beautiful and intuitive form builder on the web",
+          "99% of features are completely free",
+          "Highly customizable layout and styling"
+        ],
+        "cons": [
+          "Not fully open-source (uses a freemium model)",
+          "Self-hosting is not available (cloud only)"
+        ]
+      }
+    ]
   }
 ]
