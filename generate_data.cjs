@@ -1,0 +1,437 @@
+const fs = require('fs');
+
+const data = [
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "category": "Workspace & Notes",
+    "whySwitch": "Notion is powerful, but its proprietary format means you don't truly own your data. Switching to an open-source alternative guarantees data sovereignty, privacy, and the ability to self-host your company's knowledge base without paying per-seat subscriptions.",
+    "alternatives": [
+      {
+        "name": "AppFlowy",
+        "description": "The ultimate open-source alternative to Notion. You are in charge of your data and customizations.",
+        "url": "https://appflowy.io",
+        "pricing": "Free / Open Source",
+        "features": ["100% data control", "Offline mode", "Built with Flutter & Rust", "No vendor lock-in"],
+        "pros": ["Extremely fast performance", "Can be self-hosted easily", "Highly customizable"],
+        "cons": ["Mobile app is still in development", "Fewer third-party integrations than Notion"]
+      },
+      {
+        "name": "Outline",
+        "description": "A fast, collaborative, knowledge base for your team built on React and Node.js.",
+        "url": "https://getoutline.com",
+        "pricing": "Self-hosted Free / Cloud Paid",
+        "features": ["Markdown support", "Team collaboration", "API access", "SSO integrations"],
+        "pros": ["Beautiful, Notion-like UI", "Great for enterprise wikis", "Fast search"],
+        "cons": ["Requires technical knowledge to self-host", "Cloud version can be pricey for small teams"]
+      }
+    ]
+  },
+  {
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "category": "Email Marketing",
+    "whySwitch": "Mailchimp has drastically increased its prices and limited its free tier over the years. By self-hosting your email marketing, you only pay pennies for raw email delivery (via Amazon SES or Mailgun) rather than paying for subscriber lists.",
+    "alternatives": [
+      {
+        "name": "Listmonk",
+        "description": "High performance, self-hosted newsletter and mailing list manager with a modern dashboard.",
+        "url": "https://listmonk.app",
+        "pricing": "Free / Open Source",
+        "features": ["Fast multi-threaded sender", "Rich analytics", "Templating engine", "Subscriber management"],
+        "pros": ["Handles millions of emails easily", "Single Go binary (easy install)", "Very active community"],
+        "cons": ["Requires bringing your own SMTP provider", "No visual drag-and-drop builder"]
+      }
+    ]
+  },
+  {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "category": "CRM",
+    "whySwitch": "Salesforce is notoriously expensive, difficult to configure without hiring specialized consultants, and locks you into a complex ecosystem. Open-source CRMs give you full access to the source code and complete control over your customer data.",
+    "alternatives": [
+      {
+        "name": "ErpNext",
+        "description": "100% Open Source ERP. Everything you need to manage your business.",
+        "url": "https://erpnext.com",
+        "pricing": "Free / Open Source",
+        "features": ["Accounting", "HR & Payroll", "Manufacturing", "Sales & CRM"],
+        "pros": ["All-in-one suite", "No per-user pricing", "Highly customizable framework"],
+        "cons": ["Can be overwhelming to configure", "UI is utilitarian"]
+      }
+    ]
+  },
+  {
+    "slug": "slack",
+    "name": "Slack",
+    "category": "Team Communication",
+    "whySwitch": "Slack's pricing scales linearly with your team size, making it astronomically expensive for large communities. Open-source alternatives offer unlimited messages and integrations without the per-user tax.",
+    "alternatives": [
+      {
+        "name": "Mattermost",
+        "description": "Open-source, self-hostable Slack alternative designed for privacy-conscious enterprises.",
+        "url": "https://mattermost.com",
+        "pricing": "Free / Enterprise Paid",
+        "features": ["Enterprise-grade security", "Custom integrations", "File sharing", "Voice/Video integrations"],
+        "pros": ["Looks and feels very similar to Slack", "Complete control over data", "Great for DevOps teams"],
+        "cons": ["Setup requires some technical knowledge", "Some advanced features are locked behind Enterprise tier"]
+      },
+      {
+        "name": "Zulip",
+        "description": "An open-source team chat app with an organized threading model.",
+        "url": "https://zulip.com",
+        "pricing": "Free / Cloud Paid",
+        "features": ["Topic-based threading", "Markdown support", "Read receipts", "Powerful search"],
+        "pros": ["Best-in-class conversation threading", "Extremely fast", "Can handle thousands of users easily"],
+        "cons": ["UI is a bit dated compared to Slack", "Learning curve for the threading model"]
+      }
+    ]
+  },
+  {
+    "slug": "airtable",
+    "name": "Airtable",
+    "category": "Databases & Spreadsheets",
+    "whySwitch": "Airtable limits the number of records you can have on free and lower-tier paid plans. Open-source alternatives let you store unlimited records and self-host for maximum privacy.",
+    "alternatives": [
+      {
+        "name": "NocoDB",
+        "description": "The Open Source Airtable alternative. Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart spreadsheet.",
+        "url": "https://nocodb.com",
+        "pricing": "Free / Open Source",
+        "features": ["Connects to existing databases", "Grid/Gallery/Kanban views", "Webhooks & APIs", "Role-based access"],
+        "pros": ["Works directly with your existing SQL databases", "100% free with unlimited rows", "Very active development"],
+        "cons": ["Lacks some of Airtable's advanced formula features", "Can be buggy on edge cases"]
+      },
+      {
+        "name": "Baserow",
+        "description": "Open source no-code database tool and Airtable alternative.",
+        "url": "https://baserow.io",
+        "pricing": "Free / Premium Paid",
+        "features": ["Real-time collaboration", "Custom plugins", "REST API", "Self-hosting support"],
+        "pros": ["Very polished, Airtable-like UI", "Fast performance", "Headless architecture"],
+        "cons": ["Some advanced view types are premium-only", "Community plugins are still growing"]
+      }
+    ]
+  },
+  {
+    "slug": "calendly",
+    "name": "Calendly",
+    "category": "Scheduling",
+    "whySwitch": "Calendly charges monthly fees just to sync more than one calendar or use advanced integrations. Open-source scheduling tools provide all premium features for free if you self-host them.",
+    "alternatives": [
+      {
+        "name": "Cal.com",
+        "description": "The open-source Calendly alternative. You are in control of your events and data.",
+        "url": "https://cal.com",
+        "pricing": "Free / Cloud Paid",
+        "features": ["Webhooks & API", "Custom domain", "Routing forms", "Payment integrations"],
+        "pros": ["Beautiful, modern design", "White-labeling available", "Highly customizable workflow"],
+        "cons": ["Self-hosting requires Next.js/Prisma knowledge", "Cloud version has limits on free tier"]
+      }
+    ]
+  },
+  {
+    "slug": "zapier",
+    "name": "Zapier",
+    "category": "Automation",
+    "whySwitch": "Zapier's pricing is based on the number of 'tasks' (actions) executed. If you automate a high-volume workflow, your bill will skyrocket to hundreds of dollars a month.",
+    "alternatives": [
+      {
+        "name": "n8n",
+        "description": "Free and open node-based workflow automation tool.",
+        "url": "https://n8n.io",
+        "pricing": "Fair-code / Cloud Paid",
+        "features": ["Visual node editor", "Custom HTTP requests", "Hundreds of integrations", "Code nodes (JS)"],
+        "pros": ["Unlimited executions when self-hosted", "Very powerful logic branching", "Fair-code license"],
+        "cons": ["Steeper learning curve than Zapier", "Some niche integrations require manual HTTP setup"]
+      }
+    ]
+  },
+  {
+    "slug": "shopify",
+    "name": "Shopify",
+    "category": "E-Commerce",
+    "whySwitch": "Shopify charges a monthly subscription plus transaction fees on every sale. By using an open-source eCommerce platform, you own your store and only pay standard credit card processing fees.",
+    "alternatives": [
+      {
+        "name": "Medusa",
+        "description": "The open-source Shopify alternative. An API-first commerce engine.",
+        "url": "https://medusajs.com",
+        "pricing": "Free / Open Source",
+        "features": ["Headless architecture", "Multi-region support", "Custom promotions", "Order management"],
+        "pros": ["Extremely developer-friendly", "No proprietary platform restrictions", "Very fast storefronts"],
+        "cons": ["Requires developer knowledge to set up", "Not a plug-and-play solution like Shopify"]
+      },
+      {
+        "name": "WooCommerce",
+        "description": "The most customizable eCommerce platform for building your online business.",
+        "url": "https://woocommerce.com",
+        "pricing": "Free / Open Source",
+        "features": ["WordPress integration", "Thousands of plugins", "Digital & physical goods", "Custom themes"],
+        "pros": ["Powers millions of stores globally", "Massive ecosystem of extensions", "Easy to learn if you know WordPress"],
+        "cons": ["Can become slow if overloaded with plugins", "WordPress security maintenance required"]
+      }
+    ]
+  },
+  {
+    "slug": "google-analytics",
+    "name": "Google Analytics",
+    "category": "Analytics",
+    "whySwitch": "Google Analytics (GA4) is complex, invasive to user privacy, and requires cookie banners. Open-source alternatives are lightweight, privacy-friendly, and don't require annoying cookie consent popups.",
+    "alternatives": [
+      {
+        "name": "Plausible",
+        "description": "Simple and privacy-friendly Google Analytics alternative. No cookie banners required.",
+        "url": "https://plausible.io",
+        "pricing": "Self-hosted Free / Cloud Paid",
+        "features": ["< 1KB script", "100% data ownership", "GDPR/CCPA compliant", "Public dashboards"],
+        "pros": ["Incredibly easy to read dashboard", "No cookie banners needed", "Doesn't slow down your site"],
+        "cons": ["Lacks deeply granular user-tracking (by design)", "No custom funnels"]
+      },
+      {
+        "name": "Umami",
+        "description": "A simple, fast, privacy-focused alternative to Google Analytics.",
+        "url": "https://umami.is",
+        "pricing": "Free / Open Source",
+        "features": ["Unlimited websites", "Event tracking", "Real-time data", "Bypass ad blockers (when self-hosted)"],
+        "pros": ["Very lightweight", "Beautiful UI", "Easy to self-host with Vercel/Supabase"],
+        "cons": ["Requires basic technical knowledge to self-host", "Analytics are relatively basic"]
+      }
+    ]
+  },
+  {
+    "slug": "vercel",
+    "name": "Vercel",
+    "category": "Hosting & DevOps",
+    "whySwitch": "Vercel is amazing for Next.js, but its enterprise pricing can become prohibitively expensive if your site experiences massive traffic spikes. Self-hosting your frontends can save thousands.",
+    "alternatives": [
+      {
+        "name": "Coolify",
+        "description": "An open-source, self-hostable Heroku / Netlify / Vercel alternative.",
+        "url": "https://coolify.io",
+        "pricing": "Free / Open Source",
+        "features": ["Deploy any app (Node, Python, PHP, etc)", "Database provisioning", "Automatic SSL", "Git integration"],
+        "pros": ["Deploy unlimited apps on your own VPS", "Incredibly active community", "Very cost-effective"],
+        "cons": ["You are responsible for managing the underlying server", "UI can be a bit overwhelming"]
+      }
+    ]
+  },
+  {
+    "slug": "linear",
+    "name": "Linear",
+    "category": "Project Management",
+    "whySwitch": "Linear is beautiful but strictly cloud-based and proprietary. For teams handling sensitive source code, open-source issue trackers provide better security and data control.",
+    "alternatives": [
+      {
+        "name": "Plane",
+        "description": "The open-source software development tool to manage issues, sprints, and product roadmaps with peace of mind.",
+        "url": "https://plane.so",
+        "pricing": "Free / Open Source",
+        "features": ["Issue tracking", "Cycles (Sprints)", "Modules", "Custom views"],
+        "pros": ["Sleek, Linear-inspired design", "Great for software teams", "Completely free if self-hosted"],
+        "cons": ["Still relatively new, some bugs exist", "Fewer third-party integrations than Linear"]
+      }
+    ]
+  },
+  {
+    "slug": "docusign",
+    "name": "DocuSign",
+    "category": "E-Signatures",
+    "whySwitch": "DocuSign charges per envelope (document sent), which makes it very expensive for businesses that handle high volumes of contracts. Open-source tools let you send unlimited documents.",
+    "alternatives": [
+      {
+        "name": "Documenso",
+        "description": "The Open Source DocuSign Alternative. We want to earn your trust by letting you self-host.",
+        "url": "https://documenso.com",
+        "pricing": "Free / Open Source",
+        "features": ["Unlimited documents", "Custom branding", "API access", "Templates"],
+        "pros": ["Beautiful interface", "Completely free to self-host", "Active community"],
+        "cons": ["Fewer advanced legal compliance features out-of-the-box compared to DocuSign", "Still in early development stages"]
+      }
+    ]
+  },
+  {
+    "slug": "typeform",
+    "name": "Typeform",
+    "category": "Forms & Surveys",
+    "whySwitch": "Typeform restricts the number of responses you can collect per month, holding your data hostage if a form goes viral. Open-source forms offer unlimited responses.",
+    "alternatives": [
+      {
+        "name": "Formbricks",
+        "description": "Open-source Qualtrics & Typeform alternative. Build in-product micro-surveys for free.",
+        "url": "https://formbricks.com",
+        "pricing": "Free / Open Source",
+        "features": ["In-app surveys", "Link surveys", "Templates", "Webhooks"],
+        "pros": ["Great for SaaS product teams", "Beautiful form design", "Data privacy"],
+        "cons": ["More focused on product surveys than general-purpose forms", "Slight learning curve"]
+      },
+      {
+        "name": "OhMyForm",
+        "description": "Free open source alternative to TypeForm, TellForm, or Google Forms.",
+        "url": "https://ohmyform.com/",
+        "pricing": "Free / Open Source",
+        "features": ["Form builder", "Data export", "Customizable themes", "Embeddable"],
+        "pros": ["Simple to use", "Completely free", "No vendor lock-in"],
+        "cons": ["Project development has slowed down", "UI is a bit older"]
+      }
+    ]
+  },
+  {
+    "slug": "algolia",
+    "name": "Algolia",
+    "category": "Search",
+    "whySwitch": "Algolia is incredibly fast but charges based on the number of search requests. If your site gets a traffic spike, your search bill can easily jump into the thousands.",
+    "alternatives": [
+      {
+        "name": "Meilisearch",
+        "description": "Lightning-fast, open-source search engine that fits effortlessly into your apps, websites, and workflow.",
+        "url": "https://www.meilisearch.com",
+        "pricing": "Free / Open Source",
+        "features": ["Typo-tolerance", "Faceted search", "Synonyms", "Custom ranking"],
+        "pros": ["Incredibly fast (written in Rust)", "Easy to deploy", "Great documentation"],
+        "cons": ["Consumes significant RAM for very large datasets", "No built-in crawler (requires a separate tool)"]
+      },
+      {
+        "name": "Typesense",
+        "description": "Fast, typo-tolerant, open-source search engine optimized for instant sub-50ms searches.",
+        "url": "https://typesense.org",
+        "pricing": "Free / Open Source",
+        "features": ["In-memory performance", "Geosearch", "Vector search", "High availability"],
+        "pros": ["Uses less memory than Meilisearch for large datasets", "Very robust feature set", "Excellent for e-commerce"],
+        "cons": ["API is slightly more complex", "Self-hosting requires managing a cluster for high availability"]
+      }
+    ]
+  },
+  {
+    "slug": "firebase",
+    "name": "Firebase",
+    "category": "Backend-as-a-Service",
+    "whySwitch": "Firebase's NoSQL database is great for getting started, but complex queries are difficult, and vendor lock-in is notoriously high. Open-source alternatives use standard SQL (PostgreSQL).",
+    "alternatives": [
+      {
+        "name": "Supabase",
+        "description": "The open source Firebase alternative. Build in a weekend. Scale to millions.",
+        "url": "https://supabase.com",
+        "pricing": "Free / Cloud Paid",
+        "features": ["Postgres database", "Authentication", "Edge Functions", "Storage"],
+        "pros": ["Built on standard PostgreSQL", "Generous free tier", "Massive developer ecosystem"],
+        "cons": ["Self-hosting the entire stack is complex", "Edge functions are still maturing"]
+      },
+      {
+        "name": "Appwrite",
+        "description": "Secure Open-Source Backend Server for Web, Mobile & Flutter Developers.",
+        "url": "https://appwrite.io",
+        "pricing": "Free / Cloud Paid",
+        "features": ["Databases", "Auth", "Storage", "Functions"],
+        "pros": ["Very easy to self-host via Docker", "Great SDKs for all platforms", "Simple dashboard"],
+        "cons": ["Community is smaller than Supabase", "Database is document-based (MariaDB under the hood)"]
+      }
+    ]
+  },
+  {
+    "slug": "postman",
+    "name": "Postman",
+    "category": "API Development",
+    "whySwitch": "Postman recently forced local users to create cloud accounts and sync their API collections to the cloud, causing massive security concerns for enterprise developers.",
+    "alternatives": [
+      {
+        "name": "Hoppscotch",
+        "description": "Open source API development ecosystem. A fast, beautiful Postman alternative.",
+        "url": "https://hoppscotch.io",
+        "pricing": "Free / Open Source",
+        "features": ["REST & GraphQL", "WebSockets", "Environments", "History"],
+        "pros": ["Runs directly in the browser", "No cloud account required", "Extremely lightweight"],
+        "cons": ["Requires a browser extension for some CORS requests", "Less robust automated testing than Postman"]
+      },
+      {
+        "name": "Bruno",
+        "description": "Fast and git-friendly opensource API client, aimed at revolutionizing the status quo represented by Postman.",
+        "url": "https://www.usebruno.com",
+        "pricing": "Free / Open Source",
+        "features": ["Stores collections as plain text in Git", "No cloud sync forced", "Scripting support", "Offline only"],
+        "pros": ["Incredibly privacy-friendly", "Works flawlessly with Git", "Fast native desktop app"],
+        "cons": ["Newer project, ecosystem is smaller", "Fewer pre-built integrations"]
+      }
+    ]
+  },
+  {
+    "slug": "zoom",
+    "name": "Zoom",
+    "category": "Video Conferencing",
+    "whySwitch": "Zoom's free tier cuts you off after 40 minutes. Open-source video conferencing allows for unlimited call duration and ensures your video streams aren't being used to train AI models.",
+    "alternatives": [
+      {
+        "name": "Jitsi Meet",
+        "description": "More secure, more flexible, and completely free video conferencing.",
+        "url": "https://jitsi.org/jitsi-meet/",
+        "pricing": "Free / Open Source",
+        "features": ["No account needed", "Screen sharing", "End-to-end encryption", "Custom domains"],
+        "pros": ["Incredibly easy to start a call", "Can embed directly into your own app", "Completely free"],
+        "cons": ["Call quality can degrade with 50+ participants", "Mobile app is sometimes buggy"]
+      }
+    ]
+  },
+  {
+    "slug": "databricks",
+    "name": "Databricks",
+    "category": "Data Engineering",
+    "whySwitch": "Databricks charges significant markups on top of your underlying cloud compute costs (AWS/GCP). Using open-source alternatives allows you to build a modern data stack without the platform tax.",
+    "alternatives": [
+      {
+        "name": "Apache Spark",
+        "description": "Unified engine for large-scale data analytics.",
+        "url": "https://spark.apache.org/",
+        "pricing": "Free / Open Source",
+        "features": ["Batch processing", "Streaming", "Machine Learning", "SQL support"],
+        "pros": ["Industry standard", "Massive ecosystem", "Highly scalable"],
+        "cons": ["Complex to configure and manage clusters manually", "Steep learning curve"]
+      }
+    ]
+  },
+  {
+    "slug": "sentry",
+    "name": "Sentry",
+    "category": "Error Tracking",
+    "whySwitch": "While Sentry is technically open-source, their cloud pricing can escalate quickly based on event volume. If you have a high-traffic app, a noisy bug can consume your entire monthly quota in hours.",
+    "alternatives": [
+      {
+        "name": "GlitchTip",
+        "description": "An open-source error tracking tool. Compatible with Sentry SDKs.",
+        "url": "https://glitchtip.com",
+        "pricing": "Free / Open Source",
+        "features": ["Error tracking", "Uptime monitoring", "Sentry SDK compatibility", "Self-hosted"],
+        "pros": ["You don't need to change your Sentry code to switch", "Simple and lightweight", "Cost-effective"],
+        "cons": ["Lacks some of Sentry's advanced performance monitoring features", "Smaller community"]
+      }
+    ]
+  },
+  {
+    "slug": "auth0",
+    "name": "Auth0",
+    "category": "Authentication",
+    "whySwitch": "Auth0's pricing jumps exponentially once you cross their free tier limits, especially for B2B applications requiring SAML or SSO. Open-source auth providers include SSO out of the box.",
+    "alternatives": [
+      {
+        "name": "SuperTokens",
+        "description": "Open source alternative to Auth0 / Firebase Auth / AWS Cognito.",
+        "url": "https://supertokens.com",
+        "pricing": "Free / Cloud Paid",
+        "features": ["Session management", "Social login", "Passwordless", "Multi-tenant SSO"],
+        "pros": ["You own your user data", "Highly customizable frontend", "Excellent documentation"],
+        "cons": ["Self-hosting requires maintaining a separate database for auth", "Less robust B2B directory sync than Auth0"]
+      },
+      {
+        "name": "Keycloak",
+        "description": "Open Source Identity and Access Management.",
+        "url": "https://www.keycloak.org",
+        "pricing": "Free / Open Source",
+        "features": ["Single-Sign On", "Identity Brokering", "User Federation", "Standard Protocols"],
+        "pros": ["Enterprise-grade security", "Supported by Red Hat", "Incredibly feature-rich"],
+        "cons": ["Heavyweight Java application", "UI is complex and dated", "Hard to customize the login theme"]
+      }
+    ]
+  }
+];
+
+fs.writeFileSync('D:/saas-alternatives/src/data/saas.json', JSON.stringify(data, null, 2));
+console.log(`Successfully generated ${data.length} rich SaaS categories!`);
