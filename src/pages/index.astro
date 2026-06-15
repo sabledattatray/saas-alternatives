@@ -5,6 +5,23 @@ import saasData from '../data/saas.json';
 // Extract unique categories
 const categories = ["All", ...new Set(saasData.map(item => item.category))];
 const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives.length, 0);
+
+// Extract unique open-source alternatives
+const uniqueAlternatives = [];
+const seenAlts = new Set();
+for (const saas of saasData) {
+    for (const alt of saas.alternatives) {
+        if (!seenAlts.has(alt.name.toLowerCase())) {
+            seenAlts.add(alt.name.toLowerCase());
+            uniqueAlternatives.push({
+                ...alt,
+                parentSaas: saas.name,
+                parentSlug: saas.slug,
+                category: saas.category
+            });
+        }
+    }
+}
 ---
 <Layout>
     <main class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 relative">
@@ -144,59 +161,116 @@ const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives
             </div>
         </div>
 
-        <!-- Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10 max-w-6xl mx-auto px-4" id="directoryGrid">
-            {saasData.map((item) => (
-                <a href={`/alternative-to/${item.slug}`} class="saas-card block group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 overflow-hidden" data-name={item.name.toLowerCase()} data-category={item.category.toLowerCase()}>
-                    
-                    <div class="p-6 h-full flex flex-col justify-between relative z-10">
-                        
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-lg border border-indigo-100 dark:border-indigo-500/20">
-                                    {item.name.charAt(0)}
+        <!-- Section 1: Open Source Alternatives -->
+        <div id="openSourceSection" class="relative z-10 max-w-6xl mx-auto px-4 mb-20">
+            <div class="flex flex-col mb-8">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Popular Open Source Projects</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">High-quality, community-driven, and self-hostable replacements.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="openSourceGrid">
+                {uniqueAlternatives.map((item) => (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" class="os-card block group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 overflow-hidden" data-name={item.name.toLowerCase()} data-category={item.category.toLowerCase()} data-parent={item.parentSaas.toLowerCase()}>
+                        <div class="p-6 h-full flex flex-col justify-between relative z-10">
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-lg border border-indigo-100 dark:border-indigo-500/20">
+                                        {item.name.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-1.5 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                            {item.name}
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-400 group-hover:text-indigo-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </h3>
+                                        <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded uppercase tracking-wider">{item.category}</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                        {item.name}
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                        </svg>
-                                    </h2>
-                                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded uppercase tracking-wider">{item.category}</span>
-                                </div>
+                                
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed line-clamp-2">
+                                    {item.description}
+                                </p>
                             </div>
                             
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed line-clamp-2">
-                                Replace proprietary and expensive {item.name} with free, open-source alternatives.
-                            </p>
+                            <div class="mt-8 flex flex-col space-y-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                                <div class="flex justify-between items-center">
+                                    <span>Alternative to</span>
+                                    <div class="flex-grow border-b border-dotted border-slate-200 dark:border-slate-700/50 mx-2 translate-y-[2px]"></div>
+                                    <span class="font-bold text-indigo-600 dark:text-indigo-400">{item.parentSaas}</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Pricing</span>
+                                    <div class="flex-grow border-b border-dotted border-slate-200 dark:border-slate-700/50 mx-2 translate-y-[2px]"></div>
+                                    <span class="font-bold text-slate-900 dark:text-white">{item.pricing}</span>
+                                </div>
+                            </div>
                         </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div id="sectionDivider" class="relative z-10 max-w-6xl mx-auto px-4 mb-20">
+            <div class="border-t border-slate-200 dark:border-white/5"></div>
+        </div>
+
+        <!-- Section 2: SaaS Platforms -->
+        <div id="saasSection" class="relative z-10 max-w-6xl mx-auto px-4 mb-24">
+            <div class="flex flex-col mb-8">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">People are looking for alternatives to...</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Discover open-source replacements for proprietary SaaS and commercial tools.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="saasGrid">
+                {saasData.map((item) => (
+                    <a href={`/alternative-to/${item.slug}`} class="saas-card block group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 overflow-hidden" data-name={item.name.toLowerCase()} data-category={item.category.toLowerCase()}>
                         
-                        <div class="mt-8 flex flex-col space-y-2.5 text-sm text-slate-500 dark:text-slate-400 font-mono">
-                            <div class="flex justify-between items-center">
-                                <span>Alternatives</span>
-                                <div class="flex-grow border-b-2 border-dotted border-slate-200 dark:border-slate-700/50 mx-3 translate-y-[2px]"></div>
-                                <span class="font-bold text-slate-900 dark:text-white">{item.alternatives.length} tools</span>
+                        <div class="p-6 h-full flex flex-col justify-between relative z-10">
+                            
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800/80 flex items-center justify-center text-slate-700 dark:text-slate-300 font-bold text-lg border border-slate-200 dark:border-slate-700/50">
+                                        {item.name.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-1.5 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                            {item.name}
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </h3>
+                                        <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded uppercase tracking-wider">{item.category}</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed line-clamp-2">
+                                    Replace proprietary and expensive {item.name} with free, open-source alternatives.
+                                </p>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <span>Total Cost</span>
-                                <div class="flex-grow border-b-2 border-dotted border-slate-200 dark:border-slate-700/50 mx-3 translate-y-[2px]"></div>
-                                <span class="font-bold text-emerald-600 dark:text-emerald-400">$0.00 / mo</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span>Data Privacy</span>
-                                <div class="flex-grow border-b-2 border-dotted border-slate-200 dark:border-slate-700/50 mx-3 translate-y-[2px]"></div>
-                                <span class="font-bold text-slate-900 dark:text-white flex items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                    </svg>
-                                    Self-host
-                                </span>
+                            
+                            <div class="mt-8 flex flex-col space-y-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                                <div class="flex justify-between items-center">
+                                    <span>Available alternatives</span>
+                                    <div class="flex-grow border-b border-dotted border-slate-200 dark:border-slate-700/50 mx-2 translate-y-[2px]"></div>
+                                    <span class="font-bold text-slate-900 dark:text-white">{item.alternatives.length} tools</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Privacy focus</span>
+                                    <div class="flex-grow border-b border-dotted border-slate-200 dark:border-slate-700/50 mx-2 translate-y-[2px]"></div>
+                                    <span class="font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        Self-host
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            ))}
+                    </a>
+                ))}
+            </div>
         </div>
         
         <!-- Empty State -->
@@ -232,8 +306,12 @@ const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives
 <script>
     // Client-side filtering logic
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
-    const cards = document.querySelectorAll('.saas-card') as NodeListOf<HTMLElement>;
+    const osCards = document.querySelectorAll('.os-card') as NodeListOf<HTMLElement>;
+    const saasCards = document.querySelectorAll('.saas-card') as NodeListOf<HTMLElement>;
 
+    const openSourceSection = document.getElementById('openSourceSection');
+    const saasSection = document.getElementById('saasSection');
+    const sectionDivider = document.getElementById('sectionDivider');
     const emptyState = document.getElementById('emptyState');
     let currentSearch = '';
 
@@ -245,9 +323,25 @@ const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives
     }
 
     function filterCards() {
-        let visibleCount = 0;
+        let visibleOsCount = 0;
+        let visibleSaasCount = 0;
 
-        cards.forEach(card => {
+        osCards.forEach(card => {
+            const name = card.getAttribute('data-name') || '';
+            const category = card.getAttribute('data-category') || '';
+            const parent = card.getAttribute('data-parent') || '';
+            
+            const matchesSearch = name.includes(currentSearch) || category.includes(currentSearch) || parent.includes(currentSearch);
+
+            if (matchesSearch) {
+                card.style.display = 'block';
+                visibleOsCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        saasCards.forEach(card => {
             const name = card.getAttribute('data-name') || '';
             const category = card.getAttribute('data-category') || '';
             
@@ -255,19 +349,25 @@ const totalReplacements = saasData.reduce((acc, curr) => acc + curr.alternatives
 
             if (matchesSearch) {
                 card.style.display = 'block';
-                // Trigger a tiny reflow to restart fade-in animation
-                card.style.opacity = '0';
-                setTimeout(() => card.style.opacity = '1', 10);
-                visibleCount++;
+                visibleSaasCount++;
             } else {
                 card.style.display = 'none';
             }
         });
 
+        // Hide or show sections dynamically based on search results
+        if (openSourceSection) {
+            openSourceSection.style.display = visibleOsCount === 0 ? 'none' : 'block';
+        }
+        if (saasSection) {
+            saasSection.style.display = visibleSaasCount === 0 ? 'none' : 'block';
+        }
+        if (sectionDivider) {
+            sectionDivider.style.display = (visibleOsCount === 0 || visibleSaasCount === 0) ? 'none' : 'block';
+        }
+
         if (emptyState) {
-            emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+            emptyState.style.display = (visibleOsCount === 0 && visibleSaasCount === 0) ? 'block' : 'none';
         }
     }
-
-
 </script>
