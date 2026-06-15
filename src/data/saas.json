@@ -1748,5 +1748,113 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "chatgpt",
+    "name": "ChatGPT",
+    "category": "AI",
+    "whySwitch": "ChatGPT is closed-source and owned by OpenAI. Using open-source AI user interfaces allows you to connect any model (including local models like Llama 3) for 100% private conversations, with no data logged by a third party.",
+    "alternatives": [
+      {
+        "name": "Open WebUI",
+        "description": "User-friendly self-hosted WebUI for LLMs. Supports Ollama, OpenAI-compatible APIs.",
+        "url": "https://github.com/open-webui/open-webui",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Responsive chat UI",
+          "Local model execution via Ollama",
+          "RAG (Retrieval Augmented Generation) support",
+          "Multi-user accounts & roles"
+        ],
+        "pros": [
+          "Incredibly polished, ChatGPT-like interface",
+          "Active plugin/mod community",
+          "Strong integration with local workflows"
+        ],
+        "cons": [
+          "Requires a local server with GPU for fast execution of heavy models",
+          "Setup of custom APIs can take some effort"
+        ]
+      },
+      {
+        "name": "LibreChat",
+        "description": "Every AI model in one place. Integrates OpenAI, Anthropic, Gemini, local models, and more.",
+        "url": "https://www.librechat.ai",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Multi-model dropdown selection",
+          "File attachments & image vision support",
+          "DALL-E 3 image generation integrations",
+          "Presets and prompt templates"
+        ],
+        "pros": [
+          "Best interface for switching between OpenAI, Anthropic, and local APIs",
+          "Supports search through past chat history",
+          "Highly configurable for enterprise teams"
+        ],
+        "cons": [
+          "Requires bringing your own API keys (which cost money per token)",
+          "Setting up the database (MongoDB) requires technical knowledge"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "category": "AI",
+    "whySwitch": "Midjourney is proprietary, expensive, and runs strictly inside Discord. Open-source text-to-image software allows you to run generating algorithms locally on your own graphics card for free, with no generation limits.",
+    "alternatives": [
+      {
+        "name": "Stable Diffusion WebUI",
+        "description": "The most popular browser interface for Stable Diffusion. Run image models locally.",
+        "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Text-to-image and Image-to-image generation",
+          "Inpainting & Outpainting tools",
+          "Support for custom models (LoRAs, ControlNet)",
+          "Extensions API"
+        ],
+        "pros": [
+          "Most powerful, professional control over image generation parameters",
+          "Massive library of free, open community models on Civitai",
+          "100% free with unlimited generations"
+        ],
+        "cons": [
+          "Requires a powerful computer with a dedicated NVIDIA graphics card",
+          "Interface is very complex and utilitarian"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "copilot",
+    "name": "GitHub Copilot",
+    "category": "AI",
+    "whySwitch": "GitHub Copilot is a paid subscription that scans your private code and sends it to external servers. Open-source coding assistants let you run localized models directly in VS Code, protecting your intellectual property.",
+    "alternatives": [
+      {
+        "name": "Continue",
+        "description": "The open-source AI code assistant. Easily connect any LLM inside VS Code and JetBrains.",
+        "url": "https://www.continue.dev",
+        "pricing": "Free / Open Source",
+        "features": [
+          "Autocomplete code suggestions",
+          "Inline chat editor",
+          "Context fetching (reference files/docs)",
+          "Slash commands"
+        ],
+        "pros": [
+          "Integrates seamlessly into VS Code",
+          "Allows you to choose your LLM (from Ollama to Claude)",
+          "Great developer documentation"
+        ],
+        "cons": [
+          "Setup is manual compared to the click-and-go experience of Copilot",
+          "Autocomplete speed depends heavily on your local computer's speed or API latency"
+        ]
+      }
+    ]
   }
 ]
