@@ -66,7 +66,7 @@ for (const saas of saasData) {
 
             <!-- Subscribe Box -->
             <div class="max-w-md mx-auto">
-                <form class="flex items-center bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-white/10 shadow-sm overflow-hidden p-1 transition-colors">
+                <form id="heroSubscribeForm" class="flex items-center bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-white/10 shadow-sm overflow-hidden p-1 transition-colors">
                     <input type="email" placeholder="Enter your email" class="flex-grow bg-transparent border-none outline-none px-4 py-2 text-slate-900 dark:text-white placeholder-slate-400" required>
                     <button type="submit" class="bg-orange-700 hover:bg-orange-800 text-white px-6 py-2 rounded-md font-medium transition-colors shadow-sm">
                         Subscribe
@@ -159,20 +159,30 @@ for (const saas of saasData) {
 
                     <!-- Action Buttons -->
                     <div class="flex gap-3 shrink-0">
-                        <!-- Filters Button -->
-                        <button class="flex items-center justify-center gap-2 px-4 h-11 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm dark:shadow-2xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
-                            Filters
-                        </button>
+                        <!-- Filters Dropdown -->
+                        <div class="relative">
+                            <select id="categoryFilter" class="appearance-none flex items-center justify-between gap-3 pl-4 pr-10 h-11 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm dark:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer">
+                                {categories.map(category => (
+                                    <option value={category}>{category === 'All' ? 'All Categories' : category}</option>
+                                ))}
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+                            </div>
+                        </div>
                         
                         <!-- Order by Dropdown -->
                         <div class="relative">
-                            <button class="flex items-center justify-between gap-3 px-4 h-11 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm dark:shadow-2xl">
-                                Order by
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500" viewBox="0 0 20 20" fill="currentColor">
+                            <select id="orderByFilter" class="appearance-none flex items-center justify-between gap-3 pl-4 pr-10 h-11 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm dark:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer">
+                                <option value="relevance">Order by: Relevance</option>
+                                <option value="az">A-Z</option>
+                                <option value="za">Z-A</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 3a.75.75 0 01.53.22l3.25 3.25a.75.75 0 11-1.06 1.06L10 4.81 7.28 7.53a.75.75 0 01-1.06-1.06l3.25-3.25A.75.75 0 0110 3zm0 14a.75.75 0 01-.53-.22l-3.25-3.25a.75.75 0 111.06-1.06L10 15.19l2.72-2.72a.75.75 0 111.06 1.06l-3.25 3.25A.75.75 0 0110 17z" clip-rule="evenodd" />
                                 </svg>
-                            </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,8 +199,8 @@ for (const saas of saasData) {
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="openSourceGrid">
-                {uniqueAlternatives.map((item) => (
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" class="os-card block group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 overflow-hidden" data-name={item.name.toLowerCase()} data-category={item.category.toLowerCase()} data-parent={item.parentSaas.toLowerCase()}>
+                {uniqueAlternatives.map((item, index) => (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" class="os-card block group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 overflow-hidden" data-index={index} data-name={item.name.toLowerCase()} data-category={item.category.toLowerCase()} data-parent={item.parentSaas.toLowerCase()}>
                         <div class="p-6 h-full flex flex-col justify-between relative z-10">
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
@@ -252,8 +262,8 @@ for (const saas of saasData) {
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="saasGrid">
-                {saasData.map((item) => (
-                    <a href={`/alternative-to/${item.slug}`} class="saas-card block group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 overflow-hidden" data-name={item.name.toLowerCase()} data-category={item.category.toLowerCase()}>
+                {saasData.map((item, index) => (
+                    <a href={`/alternative-to/${item.slug}`} class="saas-card block group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 overflow-hidden" data-index={index} data-name={item.name.toLowerCase()} data-category={item.category.toLowerCase()}>
                         
                         <div class="p-6 h-full flex flex-col justify-between relative z-10">
                             
@@ -342,6 +352,9 @@ for (const saas of saasData) {
 <script>
     // Client-side filtering logic
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    const categoryFilter = document.getElementById('categoryFilter') as HTMLSelectElement;
+    const orderByFilter = document.getElementById('orderByFilter') as HTMLSelectElement;
+    
     const osCards = document.querySelectorAll('.os-card') as NodeListOf<HTMLElement>;
     const saasCards = document.querySelectorAll('.saas-card') as NodeListOf<HTMLElement>;
 
@@ -349,13 +362,57 @@ for (const saas of saasData) {
     const saasSection = document.getElementById('saasSection');
     const sectionDivider = document.getElementById('sectionDivider');
     const emptyState = document.getElementById('emptyState');
+    
     let currentSearch = '';
+    let currentCategory = 'All';
+    let currentSort = 'relevance';
 
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             currentSearch = (e.target as HTMLInputElement).value.toLowerCase();
             filterCards();
         });
+    }
+
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', (e) => {
+            currentCategory = (e.target as HTMLSelectElement).value;
+            filterCards();
+        });
+    }
+
+    if (orderByFilter) {
+        orderByFilter.addEventListener('change', (e) => {
+            currentSort = (e.target as HTMLSelectElement).value;
+            sortCards();
+        });
+    }
+
+    function sortCards() {
+        const osContainer = document.getElementById('openSourceGrid');
+        const saasContainer = document.getElementById('saasGrid');
+
+        const sortArray = (nodes: NodeListOf<HTMLElement>) => {
+            const arr = Array.from(nodes);
+            if (currentSort === 'az') {
+                arr.sort((a, b) => (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || ''));
+            } else if (currentSort === 'za') {
+                arr.sort((a, b) => (b.getAttribute('data-name') || '').localeCompare(a.getAttribute('data-name') || ''));
+            } else {
+                arr.sort((a, b) => Number(a.getAttribute('data-index')) - Number(b.getAttribute('data-index')));
+            }
+            return arr;
+        };
+
+        if (osContainer) {
+            const sortedOs = sortArray(osCards);
+            sortedOs.forEach(card => osContainer.appendChild(card));
+        }
+
+        if (saasContainer) {
+            const sortedSaas = sortArray(saasCards);
+            sortedSaas.forEach(card => saasContainer.appendChild(card));
+        }
     }
 
     function filterCards() {
@@ -368,8 +425,9 @@ for (const saas of saasData) {
             const parent = card.getAttribute('data-parent') || '';
             
             const matchesSearch = name.includes(currentSearch) || category.includes(currentSearch) || parent.includes(currentSearch);
+            const matchesCategory = currentCategory === 'All' || category.toLowerCase() === currentCategory.toLowerCase();
 
-            if (matchesSearch) {
+            if (matchesSearch && matchesCategory) {
                 card.style.display = 'block';
                 visibleOsCount++;
             } else {
@@ -382,8 +440,9 @@ for (const saas of saasData) {
             const category = card.getAttribute('data-category') || '';
             
             const matchesSearch = name.includes(currentSearch) || category.includes(currentSearch);
+            const matchesCategory = currentCategory === 'All' || category.toLowerCase() === currentCategory.toLowerCase();
 
-            if (matchesSearch) {
+            if (matchesSearch && matchesCategory) {
                 card.style.display = 'block';
                 visibleSaasCount++;
             } else {
@@ -405,5 +464,26 @@ for (const saas of saasData) {
         if (emptyState) {
             emptyState.style.display = (visibleOsCount === 0 && visibleSaasCount === 0) ? 'block' : 'none';
         }
+    }
+
+    const heroSubscribeForm = document.getElementById('heroSubscribeForm');
+    if (heroSubscribeForm) {
+        heroSubscribeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = (e.target as HTMLFormElement).querySelector('button[type="submit"]');
+            if (btn) {
+                const originalText = btn.textContent;
+                btn.textContent = 'Subscribed!';
+                btn.classList.add('bg-green-600', 'hover:bg-green-700');
+                btn.classList.remove('bg-orange-700', 'hover:bg-orange-800');
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    btn.classList.add('bg-orange-700', 'hover:bg-orange-800');
+                    (e.target as HTMLFormElement).reset();
+                }, 3000);
+            }
+        });
     }
 </script>
