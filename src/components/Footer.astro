@@ -3,9 +3,9 @@ const currentYear = new Date().getFullYear();
 ---
 <footer class="bg-white dark:bg-slate-950/80 border-t border-slate-200 dark:border-white/5 pt-20 pb-10 mt-32 relative z-10 overflow-hidden transition-colors">
   
-  <!-- Subtle ambient glow in footer (dark mode only) -->
-  <div class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
-  <div class="hidden dark:block absolute -bottom-24 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <!-- Subtle ambient glow in footer (hidden to keep flat background) -->
+  <div class="hidden absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
+  <div class="hidden absolute -bottom-24 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">

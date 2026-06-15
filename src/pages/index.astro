@@ -24,21 +24,30 @@ for (const saas of saasData) {
 }
 ---
 <Layout>
-    <main class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 relative">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        <!-- Hero Section with Background Pattern -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-10 dark:opacity-20 transition-opacity">
-            <svg class="absolute left-[50%] top-0 h-[48rem] max-w-none -translate-x-1/2 stroke-indigo-500/20" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hero Section Wrapper to Isolate Texture -->
+        <div class="relative pt-14 pb-8 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <!-- Hero Section with Background Pattern -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden transition-opacity">
+            <!-- Radial gradient ambient glows (Premium Glow) -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-br from-indigo-500/20 via-purple-500/10 to-transparent blur-[120px] rounded-full opacity-60 dark:opacity-40 -z-10"></div>
+            
+            <!-- Fine Premium Grid Pattern -->
+            <svg class="absolute left-[50%] top-0 h-[52rem] max-w-none -translate-x-1/2 stroke-slate-900/[0.04] dark:stroke-white/[0.03]" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M.5 40V.5H40" fill="none"></path>
+                <pattern id="premium-grid" width="32" height="32" patternUnits="userSpaceOnUse" x="-12" y="-12">
+                  <path d="M.5 32V.5H32" fill="none"></path>
                 </pattern>
               </defs>
-              <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
+              <rect width="100%" height="100%" fill="url(#premium-grid)"></rect>
             </svg>
+            
+            <!-- Radial gradient overlay for smooth fade -->
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))]"></div>
         </div>
 
-        <div class="text-center mb-24 relative z-10 pt-10">
+        <div class="text-center mb-14 relative z-10 pt-4">
             <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-indigo-500/20 bg-indigo-50 dark:bg-indigo-500/10 backdrop-blur-md text-sm text-indigo-700 dark:text-indigo-300 font-medium mb-8 hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors shadow-sm dark:shadow-[0_0_15px_rgba(99,102,241,0.2)]">
                 <span class="relative flex h-2 w-2 mr-2">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
@@ -76,7 +85,7 @@ for (const saas of saasData) {
             </div>
 
             <!-- Trusted By Logos -->
-            <div class="mt-20 pt-10 border-t border-slate-200 dark:border-white/5">
+            <div class="mt-12 pt-8 border-t border-slate-200 dark:border-white/5">
                 <p class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-6 uppercase tracking-[0.2em] text-center">Supported by these incredible partners</p>
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 md:gap-4 max-w-4xl mx-auto px-4">
                     <a href="https://prismical.com" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100/60 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.04] text-slate-800 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/80 dark:hover:bg-white/[0.05] hover:border-slate-300 dark:hover:border-white/[0.1] hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
@@ -121,6 +130,7 @@ for (const saas of saasData) {
                     </a>
                 </div>
             </div>
+        </div>
         </div>
 
         <!-- Filters & Search Section -->
